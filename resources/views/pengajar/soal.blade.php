@@ -75,6 +75,9 @@
                           <option value="16">16</option>
                       </select>
                   </div>
+                  <div class="form-group">
+                      <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
+                  </div>
                   <button type="submit" class="btn btn-primary">Simpan</button>
               </form>
             </div>
@@ -104,7 +107,7 @@
                             <td>{{$item->kelas}}</td>
                             <td>{{$item->jenis}}</td>
                             <td>{{$item->minggu_ke}}</td>
-                            <td><a href="{{ route('soal.show', $item->id) }}">{{$item->soal}}</a></td>
+                            <td><a class="btn btn-sm btn-info" href="{{ route('soal.show', $item->id) }}">View Soal</a></td>
                             <td>
                               <form action="" method="POST">
                                 @csrf

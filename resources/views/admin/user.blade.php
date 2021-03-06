@@ -24,8 +24,8 @@
                             <td>{{ $user->role}}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                <a href="" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
-                                <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                <a href="" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i>Edit</a>
+                                <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Hapus</a>
                             </td>
                         </tr>
                         @endforeach

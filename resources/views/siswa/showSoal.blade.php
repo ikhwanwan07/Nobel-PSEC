@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{$dataSoal->kelas}}</h5>
-          <p class="text-monospace mb-0">{{$dataSoal->created_at->format('d, M Y')}}</p>
+          <p class="text-monospace mb-0 btn btn-sm btn-success">{{$dataSoal->created_at->format('d, M Y')}}</p>
         </div>
       </div>
      <embed src="{{url('storage/'.$dataSoal->soal)}}" type="application/pdf" width="100%" height="700px">

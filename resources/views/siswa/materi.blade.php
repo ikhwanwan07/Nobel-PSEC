@@ -10,18 +10,23 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Kelas</th>
                             <th>Judul</th>
-                            <th>Aksi</th>
+                            <th>Link</th>
+                            <th>Materi</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php $no =1; ?>
                        @foreach ($materi as $item)
                         <tr>
-                            <td>1</td>
+                            <td>{{$no++}}</td>
+                            <td>{{$item->kelas}}</td>
                             <td>{{$item->judul_materi}}</td>
+                            <td><a href="{{$item->link}}" class="btn btn-info btn-sm" target="_blank">Link</a></td>
                             <td>
-                                <a href="" class="btn btn-info btn-sm">View</a>
+                                <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm">View</a>
                             </td>
                         </tr>
                         @endforeach

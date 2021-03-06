@@ -82,13 +82,14 @@
                         <tr>
                             <td>{{$item->judul_materi}}</td>
                             <td>{{$item->kelas}}</td>
-                            <td><a href="{{$item->link}}">{{$item->link}}</a></td>
+                            <td><a class="btn btn-info btn-sm" href="{{$item->link}}" target="_blank">Link</a></td>
                             <td><a class="btn btn-info btn-sm" href="{{ route('pengajar.show', $item->id) }}">View</a></td>
                             <td>
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+
                               <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
+                                <a href="" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
                             </td>

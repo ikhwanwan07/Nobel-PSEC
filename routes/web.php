@@ -37,7 +37,9 @@ Route::get('jawaban-siswa','Pengajar\PengajarController@jawaban');
 Route::get('pembayaran','Siswa\SiswaController@pembayaran');
 Route::get('jawaban','Siswa\SiswaController@jawaban');
 Route::get('materi-siswa','Siswa\SiswaController@materi');
+Route::get('materi-siswa/{id}','Siswa\SiswaController@showMateri')->name('showMateri');
 Route::get('soal-siswa','Siswa\SiswaController@soal');
+Route::get('soal-siswa/{id}','Siswa\SiswaController@showSoal')->name('showSoal');
 Route::get('view-materi','Siswa\SiswaController@viewMateri');
 Route::get('profile','Siswa\SiswaController@profile');
 
