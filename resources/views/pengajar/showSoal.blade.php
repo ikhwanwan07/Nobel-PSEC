@@ -1,11 +1,11 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Data Soal</h1>
+    <h1 class="mt-4">Data Latihan</h1>
 
     <div class="card mb-5">
         <div class="card-header">
-           Soal Minggu ke - {{$dataSoal->minggu_ke}}
+           Latihan Minggu ke - {{$dataSoal->minggu_ke}}
         </div>
         <div class="card-body">
             <h5 class="card-title">{{$dataSoal->kelas}}</h5>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Data Soal</h1>
+    <h1 class="mt-4">Data Latihan</h1>
 
       </div>
     <div class="card mb-4">

@@ -39,7 +39,7 @@
                             </a>
                             <a class="nav-link" href="/soal">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
-                                Soal
+                                Latihan
                             </a>
                             <a class="nav-link" href="/nilai">
                                 <div class="sb-nav-link-icon"><i class="fa fa-line-chart"></i></div>
@@ -68,7 +68,7 @@
                             </a>
                             <a class="nav-link" href="/soal-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
-                                Soal
+                                Latihan
                             </a>
                             @endif
                         </div>

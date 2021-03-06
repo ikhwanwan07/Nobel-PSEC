@@ -5,7 +5,7 @@
 
     <div class="card mb-5">
         <div class="card-header">
-           Soal Minggu ke - {{$dataSoal->minggu_ke}}
+           Latihan Minggu ke - {{$dataSoal->minggu_ke}}
         </div>
         <div class="card-body">
             <h5 class="card-title">{{$dataSoal->kelas}}</h5>
