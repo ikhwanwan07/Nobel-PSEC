@@ -8,8 +8,6 @@
 </style>
 <div class="container-fluid">
     <h1 class="mt-4">Data Pembayaran</h1>
-
-
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -21,20 +19,22 @@
 
                         </tr>
                     </thead>
-
                     <tbody>
+                        @foreach ($dataPembayaran as $item)
                         <tr>
-                            <td>NIssa</td>
-                            <td>Pendaftaran</td>
-                            <td> <button class="btn  btn-success btn-sm">Lunas</button></td>
+                            <td>{{$item->siswa->nama}}</td>
+                            <td>{{$item->pembayaran_ke}}</td>
+                            <td>
+                                @if ($item->status == 1)
+                                <button class="btn  btn-success btn-sm">Lunas</button>
+                                @else
+                                <button class="btn  btn-danger btn-sm">Belum Lunas</button>
+                                @endif
+
+                            </td>
                         </tr>
 
-                        <tr>
-                            <td>NIssa</td>
-                            <td>1</td>
-                            <td> <button class="btn  btn-danger btn-sm">Belum Lunas</button></td>
-                        </tr>
-
+                        @endforeach
                     </tbody>
                 </table>
             </div>

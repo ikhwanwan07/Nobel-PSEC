@@ -14,7 +14,9 @@ class SiswaController extends Controller
         return view('siswa.jawaban');
     }
     public function pembayaranSiswa(){
-        return view('siswa.pembayaran');
+        $dataPembayaran = Auth::user()->siswa->pembayaran;
+        //return $dataPembayaran;
+        return view('siswa.pembayaran',compact('dataPembayaran'));
     }
     public function materi(){
 
