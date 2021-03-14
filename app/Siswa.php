@@ -16,4 +16,9 @@ class Siswa extends Model
     {
         return $this->belongsTo('App\Guru');
     }
+
+    public function pembayaran()
+    {
+        return $this->hasMany('App\Pembayaran');
+    }
 }

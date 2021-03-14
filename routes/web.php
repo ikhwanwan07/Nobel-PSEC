@@ -28,13 +28,14 @@ Route::get('pembayaran-admin','Admin\AdminController@pembayaran');
 //pengajar
 Route::resource('pengajar', 'Pengajar\MateriController');
 Route::resource('soal', 'Pengajar\SoalController');
+Route::resource('pembayaran','Pengajar\PembayaranController');
 Route::get('materi','Pengajar\PengajarController@materi')->name('materi');
 Route::get('soal','Pengajar\PengajarController@soal');
 Route::get('nilai','Pengajar\PengajarController@nilai');
 Route::get('kelas','Pengajar\PengajarController@kelas');
 Route::get('jawaban-siswa','Pengajar\PengajarController@jawaban');
 //Siswa
-Route::get('pembayaran','Siswa\SiswaController@pembayaran');
+Route::get('pembayaran-siswa','Siswa\SiswaController@pembayaranSiswa');
 Route::get('jawaban','Siswa\SiswaController@jawaban');
 Route::get('materi-siswa','Siswa\SiswaController@materi');
 Route::get('materi-siswa/{id}','Siswa\SiswaController@showMateri')->name('showMateri');

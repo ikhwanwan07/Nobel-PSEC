@@ -49,6 +49,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-graduation-cap"></i></div>
                                 kelas
                             </a>
+                            <a class="nav-link" href="{{ route('pembayaran.index') }}">
+                                <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
+                                Pembayaran
+                            </a>
                             @endif
                             @if (auth()->user()->role == 'siswa')
 
@@ -58,7 +62,7 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-bar-chart"></i></div>
                                Jawaban
                             </a>
-                            <a class="nav-link" href="/pembayaran">
+                            <a class="nav-link" href="/pembayaran-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
                                 Pembayaran
                             </a>

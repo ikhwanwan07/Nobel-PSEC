@@ -1,8 +1,15 @@
 @extends('layouts.master')
 @section('content')
+
+<style>
+  .fa-check-circle{
+    color: yellowgreen;
+  }
+</style>
 <div class="container-fluid">
-  <h1 class="mt-4">Data Jawaban siswa</h1>
-    <div class="card mb-4">
+    <h1 class="mt-4">Data Pembayaran</h1>
+<!-- Button trigger modal -->
+
 
         <div class="card-body">
             <div class="table-responsive">
@@ -10,20 +17,24 @@
                     <thead>
                         <tr>
                             <th>Nama Siswa</th>
-                            <th>Jenis Soal</th>
-                            <th>Aksi</th>
+                            <th>Kelas</th>
+
+                            <th>Action</th>
+
                         </tr>
                     </thead>
 
                     <tbody>
-
+                        @foreach ($dataSiswa as $data)
                         <tr>
-                            <td>NIssa</td>
-                            <td>Pretes</td>
+                            <td>{{$data->nama}}</td>
+                            <td>{{$data->kelas}}</td>
                             <td>
-                                <a href="" class="btn btn-info btn-sm">View</a>
+                                <a href="{{ route('pembayaran.show',$data->id) }}" class="btn btn-info">View</a>
                             </td>
                         </tr>
+                        @endforeach
+
 
                     </tbody>
                 </table>

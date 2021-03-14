@@ -13,7 +13,7 @@ class SiswaController extends Controller
     public function jawaban(){
         return view('siswa.jawaban');
     }
-    public function pembayaran(){
+    public function pembayaranSiswa(){
         return view('siswa.pembayaran');
     }
     public function materi(){
