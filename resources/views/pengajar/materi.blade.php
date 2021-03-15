@@ -8,7 +8,7 @@
 
       <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Form Tambah Meteri</h5>
@@ -55,6 +55,13 @@
                   <div class="form-group">
                     <label for="">Deskripsi</label>
                     <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Status Soal</label>
+                      <select name="status" id="" class="form-control">
+                          <option value="1">Tampil</option>
+                          <option value="0">Tidak Tampil</option>
+                      </select>
                   </div>
                   <button type="submit" class="btn btn-primary">Simpan</button>
               </form>

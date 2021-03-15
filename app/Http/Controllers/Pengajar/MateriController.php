@@ -41,7 +41,7 @@ class MateriController extends Controller
         $product = $request->all();
         $product['materi'] = $request->file('materi')->store('assets','public');
         $data = Materi::create($product);
-       //dd($data);
+       //dd($product);
         return redirect()->back();
 
         // //dd($request->all());

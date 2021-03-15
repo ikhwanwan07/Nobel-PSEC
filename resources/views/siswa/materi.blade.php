@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
 <div class="container-fluid">
     <h1 class="mt-4">Data Materi</h1>
     <div class="card mb-4">
@@ -26,7 +27,7 @@
                             <td>{{$item->judul_materi}}</td>
                             <td><a href="{{$item->link}}" class="btn btn-info btn-sm" target="_blank">Link</a></td>
                             <td>
-                                <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm">View</a>
+                                <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm" disabled>View</a>
                             </td>
                         </tr>
                         @endforeach
