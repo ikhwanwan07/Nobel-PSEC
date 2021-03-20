@@ -63,7 +63,7 @@
                           <option value="0">Tidak Tampil</option>
                       </select>
                   </div>
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <button type="submit" class="btn btn-primary mb-5 mt-3">Simpan</button>
               </form>
             </div>
           </div>
@@ -80,6 +80,7 @@
                             <th>Kelas</th>
                             <th>Link Materi</th>
                             <th>Materi</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -92,11 +93,17 @@
                             <td><a class="btn btn-info btn-sm" href="{{$item->link}}" target="_blank">Link</a></td>
                             <td><a class="btn btn-info btn-sm" href="{{ route('pengajar.show', $item->id) }}">View</a></td>
                             <td>
-
+                                @if ($item->status == 1)
+                                <button class="btn btn-success btn-sm">Tampil</button>
+                                @else
+                                <button class="btn btn-danger btn-sm">Tidak Tampil</button>
+                                @endif
+                            </td>
+                            <td>
                               <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+                                <a href="{{ route('pengajar.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
                             </td>

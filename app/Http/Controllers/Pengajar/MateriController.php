@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pengajar;
 use App\Http\Controllers\Controller;
 use App\Materi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class MateriController extends Controller
@@ -84,7 +85,9 @@ class MateriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dataMateri = Materi::find($id);
+        $guru_id = Auth::user()->guru->id;
+        return view('pengajar.editMateri',compact('dataMateri','guru_id'));
     }
 
     /**
@@ -96,7 +99,9 @@ class MateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dataUpdateMateri = Materi::find($id);
+        $dataUpdateMateri->update();
+        return redirect()->route('materi');
     }
 
     /**

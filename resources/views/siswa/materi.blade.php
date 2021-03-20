@@ -25,9 +25,20 @@
                             <td>{{$no++}}</td>
                             <td>{{$item->kelas}}</td>
                             <td>{{$item->judul_materi}}</td>
-                            <td><a href="{{$item->link}}" class="btn btn-info btn-sm" target="_blank">Link</a></td>
                             <td>
+                                @if ($item->status == 1)
+                                <a href="{{$item->link}}" class="btn btn-info btn-sm" target="_blank">Link</a>
+                                @else
+                                <button type="button" class="btn btn-sm btn-info" disabled>Link</button>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($item->status == 1)
                                 <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm" disabled>View</a>
+                                @else
+                                <button type="button" class="btn btn-sm btn-info" disabled>View</button>
+                                @endif
+
                             </td>
                         </tr>
                         @endforeach
