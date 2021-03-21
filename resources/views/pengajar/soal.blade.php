@@ -76,7 +76,7 @@
                       </select>
                   </div>
                   <div class="form-group">
-                      <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
+                      <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary">Simpan</button>
               </form>
@@ -101,8 +101,6 @@
 
                     <tbody>
                         @foreach ($dataSoal as $item)
-
-
                         <tr>
                             <td>{{$item->kelas}}</td>
                             <td>{{$item->jenis}}</td>
@@ -112,7 +110,7 @@
                               <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+                                <a href="{{ route('soal.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
                             </td>

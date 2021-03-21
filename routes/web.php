@@ -30,7 +30,7 @@ Route::resource('pengajar', 'Pengajar\MateriController');
 Route::resource('soal', 'Pengajar\SoalController');
 Route::resource('pembayaran','Pengajar\PembayaranController');
 Route::get('materi','Pengajar\PengajarController@materi')->name('materi');
-Route::get('soal','Pengajar\PengajarController@soal');
+Route::get('soal','Pengajar\PengajarController@soal')->name('soalIndex');
 Route::get('nilai','Pengajar\PengajarController@nilai');
 Route::get('kelas','Pengajar\PengajarController@kelas');
 Route::get('jawaban-siswa','Pengajar\PengajarController@jawaban');

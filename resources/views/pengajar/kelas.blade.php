@@ -1,11 +1,8 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Data Kelas</h1>
-
-
-
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <h1 class="mt-4 mb-5">Data Kelas</h1>
+    <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">basic Junior 1</a>
         </li>
@@ -30,7 +27,7 @@
                                 <th>Kelas</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Asal</th>
-                                <th>Aksi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -40,13 +37,6 @@
                                 <td>{{$kelas->kelas}}</td>
                                 <td>{{$kelas->jenisKelamin}}</td>
                                 <td>{{$kelas->kota}}</td>
-                                <td>
-                                  <form action="" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <a href="" class="btn btn-info btn-sm">Edit</a>
-                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
-                                  </form>
                                 </td>
                             </tr>
                             @endforeach

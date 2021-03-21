@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pengajar;
 use App\Http\Controllers\Controller;
 use App\Soal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SoalController extends Controller
 {
@@ -62,7 +63,9 @@ class SoalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $guru_id = Auth::user()->guru->id;
+        $dataSoal = Soal::find($id);
+        return view('pengajar.editSoal',compact('dataSoal','guru_id'));
     }
 
     /**
@@ -74,7 +77,12 @@ class SoalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = $request->all();
+        return $product;
+    //     $product['soal'] = $request->file('soal')->store('assets','public');
+    //     $soal = Soal::find($id);
+    //     $soal->update($product);
+    //     return redirect()->route('soalIndex');
     }
 
     /**
