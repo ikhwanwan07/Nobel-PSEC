@@ -18,7 +18,6 @@ class CreateSoalsTable extends Migration
             $table->unsignedBigInteger('guru_id');
             $table->string('kelas');
             $table->string('soal');
-            $table->string('jenis');
             $table->timestamps();
         });
     }
