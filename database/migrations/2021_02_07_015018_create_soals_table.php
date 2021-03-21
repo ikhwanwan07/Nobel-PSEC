@@ -19,6 +19,7 @@ class CreateSoalsTable extends Migration
             $table->string('kelas');
             $table->string('soal');
             $table->text('deskripsi');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
