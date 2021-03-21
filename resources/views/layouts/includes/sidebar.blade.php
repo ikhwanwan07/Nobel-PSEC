@@ -47,7 +47,7 @@
                             </a>
                             <a class="nav-link" href="/kelas">
                                 <div class="sb-nav-link-icon"><i class="fa fa-graduation-cap"></i></div>
-                                kelas
+                                Kelas
                             </a>
                             <a class="nav-link" href="{{ route('pembayaran.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>

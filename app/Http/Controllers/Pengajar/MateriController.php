@@ -99,8 +99,10 @@ class MateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dataUpdateMateri = Materi::find($id);
-        $dataUpdateMateri->update();
+        $data = $request->all();
+        $data['materi'] = $request->file('materi')->store('assets','public');
+        $item = Materi::find($id);
+        $item->update($data);
         return redirect()->route('materi');
     }
 
@@ -112,6 +114,8 @@ class MateriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Materi::find($id);
+        $item->delete();
+        return redirect()->back();
     }
 }
