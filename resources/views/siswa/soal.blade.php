@@ -17,7 +17,6 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         @foreach ($soal as $item)
                         <tr>
@@ -25,7 +24,11 @@
                             <td>{{$item->created_at->format('d-h-Y')}}</td>
                             <td>{{auth::user()->siswa->guru->nama}}</td>
                             <td>
+                                @if ($item->status == 1)
                                 <a href="{{ route('showSoal', $item->id) }}" class="btn btn-info btn-sm">View</a>
+                                @else
+                                 <button type="button" class="btn btn-sm btn-info" disabled>View</button>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
