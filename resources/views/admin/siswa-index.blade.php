@@ -52,6 +52,10 @@
                     <input type="text" name="kota" id="" class="form-control">
                   </div>
                   <div class="form-group">
+                    <label for="">Nomor Handphone</label>
+                    <input type="text" name="nomor" id="" class="form-control">
+                  </div>
+                  <div class="form-group">
                     <label for="">Tanggal Lahir</label>
                     <input type="date" name="tanggal" id="" class="form-control">
                   </div>
@@ -101,6 +105,7 @@
                             <th>Nama Siswa</th>
                             <th>Jenis kelamin</th>
                             <th>Kota</th>
+                            <th>Nomor</th>
                             <th>Tanggal-lahir</th>
                             <th>Pengajar</th>
                             <th>Kelas</th>
@@ -114,6 +119,7 @@
                             <td>{{$siswa->nama}}</td>
                             <td>{{$siswa->jenisKelamin}}</td>
                             <td>{{$siswa->kota}}</td>
+                            <td>{{$siswa->nomor}}</td>
                             <td>{{$siswa->tanggal}}</td>
                             <td>{{$siswa->guru->nama}}</td>
                             <td>{{$siswa->kelas}}</td>

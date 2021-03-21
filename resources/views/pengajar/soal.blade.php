@@ -37,46 +37,23 @@
                 <option value="Basic Junior 2">Basic Junior 2</option>
                 <option value="Basic Senior 1">Basic Senior 1</option>
                 <option value="Basic Senior 2">Basic Senior 2</option>
-
               </select>
             </div>
                   <div class="form-group">
                     <label for="">Soal</label>
                     <input type="file" name="soal" id="" class="form-control">
                   </div>
-
                   <div class="form-group">
-                    <label for="">Jenis</label>
-                    <select name="jenis" id="" class="form-control">
-                        <option value="">Silahkan pilih jenis</option>
-                        <option value="Pretest">Pretest</option>
-                        <option value="Posttest">Posttest</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                      <label for="">Minggu ke- </label>
-                      <select name="minggu_ke" id="" class="form-control">
-                          <option value="">Silahkan pilih Minggu</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                          <option value="13">13</option>
-                          <option value="14">14</option>
-                          <option value="15">15</option>
-                          <option value="16">16</option>
-                      </select>
-                  </div>
-                  <div class="form-group">
+                      <label for="">Deskripsi</label>
                       <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Status</label>
+                    <select name="status" id="" class="form-control">
+                      <option value="">Silahkan pilih kelas</option>
+                      <option value="1">Tampil</option>
+                      <option value="0">Tidak Tampil</option>
+                    </select>
                   </div>
                   <button type="submit" class="btn btn-primary">Simpan</button>
               </form>
@@ -93,7 +70,7 @@
                         <tr>
                             <th>Kelas</th>
                             <th>Jenis</th>
-                            <th>Minggu ke</th>
+                            <th>Deskripsi</th>
                             <th>Soal</th>
                             <th>Aksi</th>
                         </tr>
@@ -103,8 +80,8 @@
                         @foreach ($dataSoal as $item)
                         <tr>
                             <td>{{$item->kelas}}</td>
-                            <td>{{$item->jenis}}</td>
-                            <td>{{$item->minggu_ke}}</td>
+                            <td>{{$item->deskripsi}}</td>
+                            <td>{{$item->status}}</td>
                             <td><a class="btn btn-sm btn-info" href="{{ route('soal.show', $item->id) }}">View Soal</a></td>
                             <td>
                               <form action="" method="POST">
