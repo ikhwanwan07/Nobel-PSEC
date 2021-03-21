@@ -43,6 +43,5 @@ Route::get('soal-siswa','Siswa\SiswaController@soal');
 Route::get('soal-siswa/{id}','Siswa\SiswaController@showSoal')->name('showSoal');
 Route::get('view-materi','Siswa\SiswaController@viewMateri');
 Route::get('profile','Siswa\SiswaController@profile');
-
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
