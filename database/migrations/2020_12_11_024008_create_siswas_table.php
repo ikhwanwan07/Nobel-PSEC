@@ -19,6 +19,7 @@ class CreateSiswasTable extends Migration
             $table->unsignedBigInteger('guru_id');
             $table->string('nama');
             $table->string('jenisKelamin');
+            $table->string('kelas');
             $table->string('nomor');
             $table->string('kota');
             $table->date('tanggal');

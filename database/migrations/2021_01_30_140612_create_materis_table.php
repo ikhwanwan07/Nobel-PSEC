@@ -21,6 +21,7 @@ class CreateMaterisTable extends Migration
             $table->string('link');
             $table->string('materi');
             $table->text('deskripsi');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
