@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Siswa;
 
 use App\Http\Controllers\Controller;
+use App\Jawaban;
 use App\Materi;
 use App\Soal;
 use Illuminate\Http\Request;
@@ -11,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 class SiswaController extends Controller
 {
     public function jawaban(){
-        return view('siswa.jawaban');
+        $dataJawaban = Jawaban::all();
+        return view('siswa.jawaban',compact('dataJawaban'));
     }
     public function pembayaranSiswa(){
         $dataPembayaran = Auth::user()->siswa->pembayaran;

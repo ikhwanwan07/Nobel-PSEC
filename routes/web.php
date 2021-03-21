@@ -35,6 +35,7 @@ Route::get('nilai','Pengajar\PengajarController@nilai');
 Route::get('kelas','Pengajar\PengajarController@kelas');
 Route::get('jawaban-siswa','Pengajar\PengajarController@jawaban');
 //Siswa
+Route::resource('jawaban-siswa', 'Siswa\JawabanController');
 Route::get('pembayaran-siswa','Siswa\SiswaController@pembayaranSiswa');
 Route::get('jawaban','Siswa\SiswaController@jawaban');
 Route::get('materi-siswa','Siswa\SiswaController@materi');

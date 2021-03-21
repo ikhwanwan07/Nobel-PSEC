@@ -23,15 +23,19 @@
           </button>
         </div>
         <div class="modal-body">
-        <form action="" >
+        <form action="{{ route('jawaban-siswa.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
-                <input type="text" name="materi_id" value="{{$dataSoal->id}}" disabled>
+                <input type="hidden" name="materi_id" value="{{$dataSoal->id}}" >
             </div>
             <div class="form-group">
-                <input type="text" name="siswa_id" value="{{auth::user()->siswa->id}}" disabled>
+                <input type="hidden" name="siswa_id" value="{{auth::user()->siswa->id}}">
             </div>
             <div class="form-group">
                 <input type="file" name="jawaban" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="status" value="1" class="form-control">
             </div>
             <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
         </form>
