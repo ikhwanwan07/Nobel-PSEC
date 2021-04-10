@@ -29,6 +29,10 @@
                             @endif
                             @if (auth()->user()->role == 'guru')
                             <div class="sb-sidenav-menu-heading">Pengajar</div>
+                            <a class="nav-link" href="/dashboard-guru">
+                                <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
+                                Dashboard
+                            </a>
                             <a class="nav-link" href="/jawaban-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Jawaban
@@ -55,9 +59,11 @@
                             </a>
                             @endif
                             @if (auth()->user()->role == 'siswa')
-
-
                             <div class="sb-sidenav-menu-heading">Siswa</div>
+                            <a class="nav-link" href="/dashboard-siswa">
+                                <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
+                                Dashboard
+                            </a>
                             <a class="nav-link" href="/jawaban">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bar-chart"></i></div>
                                Jawaban

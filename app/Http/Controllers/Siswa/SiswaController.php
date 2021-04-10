@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Auth;
 
 class SiswaController extends Controller
 {
+    public function dashboard()
+    {
+        return view('siswa.dashboard');
+    }
     public function jawaban(){
         $dataJawaban = Jawaban::all();
         return view('siswa.jawaban',compact('dataJawaban'));

@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PengajarController extends Controller
 {
+
+    public function dashboard()
+    {
+        return view('pengajar.dashboard');
+    }
     public function materi(){
 
         $materi = Materi::all();
