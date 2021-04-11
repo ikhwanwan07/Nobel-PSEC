@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Pengajar;
 
 use App\Http\Controllers\Controller;
-use App\Materi;
+use App\SubMateri;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 
-class MateriController extends Controller
+class SubMateriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,16 +36,12 @@ class MateriController extends Controller
      */
     public function store(Request $request)
     {
-
-        $product = $request->all();
-        //$product['materi'] = $request->file('materi')->store('assets','public');
-        $data = Materi::create($product);
-       //dd($product);
+        $subMateri = $request->all();
+        $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');
+        $subMateri['sound'] = $request->file('sound')->store('assets/sound','public');
+        $data = SubMateri::create($subMateri);
+        //dd($product);
         return redirect()->back();
-
-        //dd($request->all());
-
-
     }
 
     /**
@@ -58,11 +52,7 @@ class MateriController extends Controller
      */
     public function show($id)
     {
-        $dataMateri = Materi::find($id);
-
-        //$getData = Storage::get($dataMateri->materi);
-        //dd($getData);
-        return view('pengajar.showMateri',compact('dataMateri'));
+        //
     }
 
     /**
@@ -73,9 +63,7 @@ class MateriController extends Controller
      */
     public function edit($id)
     {
-        $dataMateri = Materi::find($id);
-        $guru_id = Auth::user()->guru->id;
-        return view('pengajar.editMateri',compact('dataMateri','guru_id'));
+        //
     }
 
     /**
@@ -87,11 +75,7 @@ class MateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $data['materi'] = $request->file('materi')->store('assets','public');
-        $item = Materi::find($id);
-        $item->update($data);
-        return redirect()->route('materi');
+        //
     }
 
     /**
@@ -102,8 +86,6 @@ class MateriController extends Controller
      */
     public function destroy($id)
     {
-        $item = Materi::find($id);
-        $item->delete();
-        return redirect()->back();
+        //
     }
 }

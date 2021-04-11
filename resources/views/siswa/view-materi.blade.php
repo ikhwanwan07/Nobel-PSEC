@@ -14,66 +14,20 @@
       </div>
 
       <div class="row">
-          <div class="col-3 d-flex">
+          @foreach ($dataMateri->submateri as $item)
+          <div class="col-3 d-flex mt-3 mb-5">
             <div class="card" style="width: 15rem;">
-                <img src="{{asset('admin/assets/img/RG1.png')}}" class="card-img-top" alt="...">
+                <img src="{{url('storage/'.$item->gambar)}}" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                  <h5 class="card-title">Card title</h5>
-                  <button type="button" class="btn btn-primary audio"  data-id="1">Play</button>
-                  <audio controls  data-id="1" style="display: none">
-                    <source src="{{asset('admin/assets/brg.mp3')}}" type="audio/mpeg">
+                  <h5 class="card-title">{{$item->kata}}</h5>
+                  <button type="button" class="btn btn-primary audio"  data-id="{{$item->id}}">Play</button>
+                  <audio controls  data-id="{{$item->id}}" style="display: none">
+                    <source src="{{url('storage/'.$item->sound)}}" type="audio/mpeg">
                   </audio>
                 </div>
           </div>
       </div>
-      <div class="col-3">
-        <div class="card" style="width: 15rem;">
-            <img src="{{asset('admin/assets/img/RG1.png')}}" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              <h5 class="card-title">Card title</h5>
-              <button type="button" class="btn btn-primary audio"  data-id="1">Play</button>
-              <audio controls  data-id="1" style="display: none">
-                <source src="{{asset('admin/assets/brg.mp3')}}" type="audio/mpeg">
-              </audio>
-            </div>
-      </div>
-  </div>
-  <div class="col-3">
-    <div class="card" style="width: 15rem;">
-        <img src="{{asset('admin/assets/img/RG1.png')}}" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title">Card title</h5>
-          <button type="button" class="btn btn-primary audio"  data-id="2">Play</button>
-          <audio controls  data-id="2" style="display: none">
-            <source src="{{asset('admin/assets/digi.mp3')}}" type="audio/mpeg">
-          </audio>
-        </div>
-  </div>
-</div>
-<div class="col-3">
-    <div class="card" style="width: 15rem;">
-        <img src="{{asset('admin/assets/img/RG1.png')}}" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title">Card title</h5>
-          <button type="button" class="btn btn-primary audio"  data-id="2">Play</button>
-          <audio controls  data-id="2" style="display: none">
-            <source src="{{asset('admin/assets/digi.mp3')}}" type="audio/mpeg">
-          </audio>
-        </div>
-  </div>
-</div>
-<div class="col-3 mt-3">
-    <div class="card" style="width: 15rem;">
-        <img src="{{asset('admin/assets/img/RG1.png')}}" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-          <h5 class="card-title">Card title</h5>
-          <button type="button" class="btn btn-primary audio"  data-id="2">Play</button>
-          <audio controls  data-id="2" style="display: none">
-            <source src="{{asset('admin/assets/digi.mp3')}}" type="audio/mpeg">
-          </audio>
-        </div>
-  </div>
-</div>
+      @endforeach
 
       </div>
 

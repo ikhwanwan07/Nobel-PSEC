@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Pengajar\PengajarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,7 @@ Route::get('pembayaran-admin','Admin\AdminController@pembayaran');
 //pengajar
 Route::resource('pengajar', 'Pengajar\MateriController');
 Route::resource('soal', 'Pengajar\SoalController');
+Route::resource('subMateri', 'Pengajar\SubMateriController');
 Route::resource('pembayaran','Pengajar\PembayaranController');
 Route::get('dashboard-guru','Pengajar\PengajarController@dashboard');
 Route::get('materi','Pengajar\PengajarController@materi')->name('materi');

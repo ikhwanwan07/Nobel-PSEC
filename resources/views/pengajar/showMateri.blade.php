@@ -30,7 +30,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form action="{{ route('subMateri.store') }}" enctype="multipart/form-data" method="POST">
+            @csrf
+            @method("POST")
+            <input type="hidden" name="materi_id" value="{{$dataMateri->id}}">
               <div class="form-group">
                   <label for="">Kata</label>
                   <input type="text" class="form-control" name="kata">
@@ -53,6 +56,7 @@
   </div>
             <table class="table">
                 <thead>
+
                   <tr>
                     <th scope="col">No</th>
                     <th scope="col">Gambar</th>
@@ -62,25 +66,13 @@
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach ($dataMateri->submateri as $item)
                   <tr>
                     <th scope="row">1</th>
-                    <td><img src="{{asset('admin/assets/img/RG1.png')}}" alt="" width="100" height="100"></td>
-                    <td>House</td>
+                    <td><img src="{{url('storage/'.$item->gambar)}}" alt="" width="100" height="100"></td>
+                    <td>{{$item->kata}}</td>
                     <td><audio controls  data-id="2">
-                        <source src="{{asset('admin/assets/digi.mp3')}}" type="audio/mpeg">
-                      </audio>
-                    </td>
-                    <td>
-                        <a href="" class="btn btn-info btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Hapus</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td><img src="{{asset('admin/assets/img/RG1.png')}}" alt="" width="100" height="100"></td>
-                    <td>House</td>
-                    <td><audio controls  data-id="2">
-                        <source src="{{asset('admin/assets/brg.mp3')}}" type="audio/mpeg">
+                        <source src="{{url('storage/'.$item->sound)}}" type="audio/mpeg">
                       </audio>
                     </td>
                     <td>
@@ -89,6 +81,7 @@
                     </td>
                   </tr>
 
+                  @endforeach
 
                 </tbody>
               </table>
