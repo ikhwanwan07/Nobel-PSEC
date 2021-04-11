@@ -45,6 +45,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                                 Latihan
                             </a>
+                            <a class="nav-link" href="/quiz">
+                                <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
+                                Quizz
+                            </a>
                             <a class="nav-link" href="/nilai">
                                 <div class="sb-nav-link-icon"><i class="fa fa-line-chart"></i></div>
                                 Nilai
@@ -78,7 +82,11 @@
                             </a>
                             <a class="nav-link" href="/soal-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
-                                Latihan
+                               Soal
+                            </a>
+                            <a class="nav-link" href="/quiz-siswa">
+                                <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
+                                Quiz
                             </a>
                             @endif
                         </div>

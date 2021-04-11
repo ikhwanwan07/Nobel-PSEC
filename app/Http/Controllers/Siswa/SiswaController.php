@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Siswa;
 use App\Http\Controllers\Controller;
 use App\Jawaban;
 use App\Materi;
+use App\Quiz;
 use App\Soal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,5 +60,9 @@ class SiswaController extends Controller
     {
         $dataSoal = Soal::find($id);
         return view('siswa.showSoal',compact('dataSoal'));
+    }
+    public function quiz(){
+        $quiz = Quiz::all();
+        return view('siswa.quiz',compact('quiz'));
     }
 }

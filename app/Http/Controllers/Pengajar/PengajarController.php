@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pengajar;
 
 use App\Http\Controllers\Controller;
 use App\Materi;
+use App\Quiz;
 use App\Soal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,5 +41,9 @@ class PengajarController extends Controller
     }
     public function jawaban(){
         return view('pengajar.jawaban');
+    }
+    public function quiz(){
+        $quiz= Quiz::all();
+        return view('pengajar.quiz',compact('quiz'));
     }
 }
