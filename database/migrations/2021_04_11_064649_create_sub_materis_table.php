@@ -15,7 +15,7 @@ class CreateSubMaterisTable extends Migration
     {
         Schema::create('submateri', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('mater_id');
+            $table->unsignedBigInteger('materi_id');
             $table->string('kata');
             $table->string('gambar');
             $table->string('sound');
