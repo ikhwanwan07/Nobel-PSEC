@@ -13,6 +13,10 @@ class Materi extends Model
    {
        return $this->belongsTo('App\Guru');
    }
+   public function submateri()
+   {
+       return $this->hasMany('App\SubMateri');
+   }
 
    public function getPhotoAttibute($value)
     {

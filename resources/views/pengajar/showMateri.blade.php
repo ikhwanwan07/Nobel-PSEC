@@ -33,15 +33,15 @@
           <form action="">
               <div class="form-group">
                   <label for="">Kata</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="kata">
               </div>
               <div class="form-group">
                   <label for="">Gambar</label>
-                  <input type="file" name="" id="" class="form-control">
+                  <input type="file" name="gambar" id="" class="form-control">
               </div>
               <div class="form-group">
                 <label for="">Sound</label>
-                <input type="file" name="" id="" class="form-control">
+                <input type="file" name="sound" id="" class="form-control">
             </div>
 
             <button type="submit" class="btn btn-primary btn-md mt-3 mb-5">Simpan</button>
