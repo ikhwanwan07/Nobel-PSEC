@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Materi extends Model
 {
     protected $table = 'materi';
-   protected $fillable = ['guru_id','judul_materi','kelas','link','materi','deskripsi','status'];
+   protected $fillable = ['guru_id','judul_materi','kelas','deskripsi','status'];
 
    public function guru()
    {

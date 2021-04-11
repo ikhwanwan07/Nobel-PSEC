@@ -18,8 +18,6 @@ class CreateMaterisTable extends Migration
             $table->unsignedBigInteger('guru_id');
             $table->text('judul_materi');
             $table->string('kelas');
-            $table->string('link');
-            $table->string('materi');
             $table->text('deskripsi');
             $table->boolean('status');
             $table->timestamps();

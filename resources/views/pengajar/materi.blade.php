@@ -43,15 +43,7 @@
                      <option value="Basic Senior 2">Basic Senior 2</option>
                    </select>
                   </div>
-                  <div class="form-group">
-                    <label for="">Link</label>
-                    <input type="text" name="link" id="" class="form-control">
-                  </div>
 
-                  <div class="form-group">
-                    <label for="">Materi</label>
-                    <input type="file" name="materi" class="form-control">
-                  </div>
                   <div class="form-group">
                     <label for="">Deskripsi</label>
                     <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
@@ -78,7 +70,6 @@
                         <tr>
                             <th>Judul Materi</th>
                             <th>Kelas</th>
-                            <th>Link Materi</th>
                             <th>Materi</th>
                             <th>Status</th>
                             <th>Aksi</th>
@@ -90,7 +81,6 @@
                         <tr>
                             <td>{{$item->judul_materi}}</td>
                             <td>{{$item->kelas}}</td>
-                            <td><a class="btn btn-info btn-sm" href="{{$item->link}}" target="_blank">Link</a></td>
                             <td><a class="btn btn-info btn-sm" href="{{ route('pengajar.show', $item->id) }}">View</a></td>
                             <td>
                                 @if ($item->status == 1)

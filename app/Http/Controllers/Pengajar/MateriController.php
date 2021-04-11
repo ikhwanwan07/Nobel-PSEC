@@ -39,27 +39,15 @@ class MateriController extends Controller
     public function store(Request $request)
     {
 
-        $product = $request->all();
-        $product['materi'] = $request->file('materi')->store('assets','public');
-        $data = Materi::create($product);
-       //dd($product);
-        return redirect()->back();
+    //     $product = $request->all();
+    //     $product['materi'] = $request->file('materi')->store('assets','public');
+    //     $data = Materi::create($product);
+    //    //dd($product);
+    //     return redirect()->back();
 
-        // //dd($request->all());
+        dd($request->all());
 
-        // $materi = $request->file('materi')->store('assets/materi');
 
-        // $dataMateri = Materi::create([
-        //     'guru_id' => auth()->user()->guru->id,
-        //     'judul_materi' => $request->judul_materi,
-        //     'kelas' => $request->kelas,
-        //     'link' => $request->link,
-        //     'materi' => $materi,
-        //     'deskripsi' => $request->deskripsi
-        // ]);
-
-        // //dd($dataMateri);
-        // return redirect('/materi');
     }
 
     /**

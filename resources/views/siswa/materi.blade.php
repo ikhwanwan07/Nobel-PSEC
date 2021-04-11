@@ -13,7 +13,7 @@
                             <th>No</th>
                             <th>Kelas</th>
                             <th>Judul</th>
-                            <th>Link</th>
+
                             <th>Materi</th>
                         </tr>
                     </thead>
@@ -25,13 +25,6 @@
                             <td>{{$no++}}</td>
                             <td>{{$item->kelas}}</td>
                             <td>{{$item->judul_materi}}</td>
-                            <td>
-                                @if ($item->status == 1)
-                                <a href="{{$item->link}}" class="btn btn-info btn-sm" target="_blank">Link</a>
-                                @else
-                                <button type="button" class="btn btn-sm btn-info" disabled>Link</button>
-                                @endif
-                            </td>
                             <td>
                                 @if ($item->status == 1)
                                 <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm" disabled>View</a>
