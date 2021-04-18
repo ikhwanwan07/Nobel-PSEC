@@ -31,7 +31,7 @@
                         <tr>
                             <td>{{$item->judul_sub}}</td>
                             <td><a class="btn btn-info btn-sm" href="{{ route('showSubMateri', $item->id) }}">View</a></td>
-                            <th><a href=""></a>Link</th>
+                            <th><a href="{{$item->link}}" target="_blank">Link</a></th>
                             <td>
                               <form action="" method="POST">
                                 @csrf
