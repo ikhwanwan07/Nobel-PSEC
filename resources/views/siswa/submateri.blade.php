@@ -1,7 +1,16 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Data Test</h1>
+    <h1 class="mt-4">Data Sub Materi</h1>
+
+    <div class="card mb-5">
+        <div class="card-header">
+            {{$dataMateri->judul_materi}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{$dataMateri->deskripsi}}</p>
+        </div>
+      </div>
 
     <div class="card mb-4">
 
@@ -10,22 +19,19 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>NO</th>
-                            <th>Link</th>
-                            <th>Deskripsi</th>
+                            <th>Judul Sub Materi</th>
+                            <th>Data Materi</th>
+                            <th>Links</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <?php
-                        $no =1;
-                        ?>
-                        @foreach ($quiz as $item)
+                        @foreach ($dataMateri->submateri as $item)
                         <tr>
-                            <td>{{$no++}}</td>
-                            <td><a href="{{$item->quiz}}" target="_blank">{{$item->quiz}}  </a></td>
-                            <td>{{$item->deskripsi}}</td>
+                            <td>{{$item->judul_sub}}</td>
+                            <td><a class="btn btn-info btn-sm" href="{{ route('showSubMateri', $item->id) }}">View</a></td>
+                            <th><a href=""></a>Link</th>
                             <td>
                               <form action="" method="POST">
                                 @csrf

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">Data Quiz</h1>
+    <h1 class="mt-4">DataTest</h1>
     <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
         Tambah Quizz
       </button>
@@ -34,6 +34,13 @@
                     <input type="text" name="quiz" id="" class="form-control">
                   </div>
                   <div class="form-group">
+                  <label for="">Soal</label>
+                  <select name="soal" id="" class="form-control">
+                      <option value="pretest">PreTest</option>
+                      <option value="posttest">PostTest</option>
+                  </select>
+                </div>
+                  <div class="form-group">
                       <label for="">Deskripsi</label>
                       <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control"></textarea>
                   </div>
@@ -65,7 +72,7 @@
                         @foreach ($quiz as $item)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td><a href="{{$item->quiz}}" target="_blank">{{$item->quiz}}  </a></td>
+                            <td><a href="{{$item->quiz}}" target="_blank" class="btn btn-primary btn-sm">Link</a></td>
                             <td>{{$item->deskripsi}}</td>
                             <td>
                               <form action="" method="POST">

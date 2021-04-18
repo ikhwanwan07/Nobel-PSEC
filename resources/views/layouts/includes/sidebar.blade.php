@@ -41,13 +41,13 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Materi
                             </a>
-                            <a class="nav-link" href="/soal">
+                            {{-- <a class="nav-link" href="/soal">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                                 Latihan
-                            </a>
+                            </a> --}}
                             <a class="nav-link" href="/quiz">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
-                                Quizz
+                              Test
                             </a>
                             <a class="nav-link" href="/nilai">
                                 <div class="sb-nav-link-icon"><i class="fa fa-line-chart"></i></div>

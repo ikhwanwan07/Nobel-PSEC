@@ -14,7 +14,7 @@
       </div>
 
       <div class="row">
-          @foreach ($dataMateri->submateri as $item)
+          @foreach ($dataMateri->data as $item)
           <div class="col-3 d-flex mt-3 mb-5">
             <div class="card" style="width: 15rem;">
                 <img src="{{url('storage/'.$item->gambar)}}" class="card-img-top" alt="...">

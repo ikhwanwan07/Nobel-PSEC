@@ -37,7 +37,6 @@ class QuizController extends Controller
     public function store(Request $request)
     {
         $quizz = Quiz::create($request->all());
-
         return redirect()->back();
     }
 

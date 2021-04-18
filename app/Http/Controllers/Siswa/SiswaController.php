@@ -7,6 +7,7 @@ use App\Jawaban;
 use App\Materi;
 use App\Quiz;
 use App\Soal;
+use App\SubMateri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -53,6 +54,12 @@ class SiswaController extends Controller
     public function showMateri($id)
     {
         $dataMateri = Materi::find($id);
+        return view('siswa.submateri',compact('dataMateri'));
+    }
+    public function showSubMateri($id)
+    {
+        $dataMateri = SubMateri::find($id);
+        // $materi = DataMateri::all();
         return view('siswa.view-materi',compact('dataMateri'));
     }
 
