@@ -2,11 +2,11 @@
 @section('content')
 <div class="container-fluid">
     <h1 class="mt-4">Data Nilai</h1>
-    <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
+    {{-- <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
         Tambah Nilai
-      </button>
+      </button> --}}
       <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -49,9 +49,10 @@
             </div>
           </div>
         </div>
-      </div>
-    <div class="card mb-4">
+      </div> --}}
 
+
+      <div class="card mb-4">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

@@ -8,6 +8,6 @@ class Quiz extends Model
 {
     protected $table = 'quizzes';
 
-    protected $fillable = ['quiz','soal','deskripsi'];
+    protected $fillable = ['judul_quiz','quiz','soal','deskripsi'];
 
 }

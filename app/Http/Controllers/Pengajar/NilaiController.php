@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Pengajar;
 
 use App\Http\Controllers\Controller;
+use App\Nilai;
+use App\Quiz;
 use App\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NilaiController extends Controller
 {
@@ -36,7 +39,11 @@ class NilaiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        //dd($request->all());
+        $nilai = Nilai::create($request->all());
+
+        return redirect()->back();
     }
 
     /**
@@ -48,7 +55,20 @@ class NilaiController extends Controller
     public function show($id)
     {
         $siswa = Siswa::find($id);
-        return view('pengajar.view-nilai',compact('siswa'));
+        $getQuiz = Quiz::all();
+        $getNilai =  DB::table('nilai')
+        ->select('quizzes.soal','nilai.nilai')
+        ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
+        ->where('quizzes.soal','=','pretest')
+        ->get();
+
+        $getNilai2 =  DB::table('nilai')
+        ->select('quizzes.soal','nilai.nilai')
+        ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
+        ->where('quizzes.soal','=','posttest')
+        ->get();
+        //dd($getNilai)->json_decode();
+        return view('pengajar.view-nilai',compact('siswa','getQuiz','getNilai','getNilai2'));
     }
 
     /**

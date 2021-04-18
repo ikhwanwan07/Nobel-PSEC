@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubMateri extends Model
 {
     protected $table = 'submateri';
-   protected $fillable = ['materi_id','judul_sub','deskripsi','status'];
+   protected $fillable = ['materi_id','judul_sub','deskripsi','link','status'];
 
    public function materi()
    {

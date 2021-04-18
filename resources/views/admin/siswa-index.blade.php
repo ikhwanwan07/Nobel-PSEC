@@ -38,11 +38,11 @@
                 <div class="form-group">
                     <label for="">Jenis Kelamin</label> <br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio1"  value="L">
+                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio1"  value="Laki-Laki">
                         <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                       </div>
                       <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio2" value="P">
+                        <input class="form-check-input" type="radio" name="jenisKelamin" id="inlineRadio2" value="Perempuan">
                         <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                       </div>
 

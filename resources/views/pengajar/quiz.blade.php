@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <h1 class="mt-4">DataTest</h1>
     <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
-        Tambah Quizz
+        Tambah Test
       </button>
 
       <!-- Modal -->
@@ -28,7 +28,10 @@
                     </ul>
                 </div>
             @endif
-
+            <div class="form-group">
+                <label for="">Judul Soal</label>
+                <input type="text" name="judul_quiz" id="" class="form-control">
+              </div>
                   <div class="form-group">
                     <label for="">Link Quiz</label>
                     <input type="text" name="quiz" id="" class="form-control">
@@ -59,6 +62,7 @@
                     <thead>
                         <tr>
                             <th>NO</th>
+                            <th>Judul</th>
                             <th>Link</th>
                             <th>Deskripsi</th>
                             <th>Aksi</th>
@@ -72,6 +76,7 @@
                         @foreach ($quiz as $item)
                         <tr>
                             <td>{{$no++}}</td>
+                            <td>{{$item->judul_quiz}}</td>
                             <td><a href="{{$item->quiz}}" target="_blank" class="btn btn-primary btn-sm">Link</a></td>
                             <td>{{$item->deskripsi}}</td>
                             <td>
