@@ -30,7 +30,9 @@ class PengajarController extends Controller
     }
 
     public function nilai(){
-        return view('pengajar.nilai');
+        $kelas = Auth::user()->guru->siswa;
+        //dd($kelas);
+        return view('pengajar.nilai',compact('kelas'));
     }
 
     public function kelas(){
