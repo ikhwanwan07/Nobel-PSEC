@@ -32,6 +32,7 @@ Route::resource('soal', 'Pengajar\SoalController');
 Route::resource('subMateri', 'Pengajar\SubMateriController');
 Route::resource('pembayaran','Pengajar\PembayaranController');
 Route::resource('quiz','Pengajar\QuizController');
+Route::resource('dataMateri','Pengajar\DataMateriController');
 Route::get('dashboard-guru','Pengajar\PengajarController@dashboard');
 Route::get('quiz','Pengajar\PengajarController@quiz');
 Route::get('materi','Pengajar\PengajarController@materi')->name('materi');

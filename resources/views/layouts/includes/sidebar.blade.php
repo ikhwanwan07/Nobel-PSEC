@@ -33,10 +33,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="/jawaban-siswa">
+                            {{-- <a class="nav-link" href="/jawaban-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Jawaban
-                            </a>
+                            </a> --}}
                             <a class="nav-link" href="/materi">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Materi

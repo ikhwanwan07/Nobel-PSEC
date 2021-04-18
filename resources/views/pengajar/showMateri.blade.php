@@ -3,13 +3,12 @@
 <div class="container-fluid">
     <h1 class="mt-4">Data Materi</h1>
 
-    <div class="card mb-5">
+    <div class="card mb-3">
         <div class="card-header">
-            {{$dataMateri->judul_materi}}
+            {{$dataMateri->judul_sub}}
         </div>
         <div class="card-body">
           <p class="card-text">{{$dataMateri->deskripsi}}</p>
-          <p class="text-monospace mb-0 btn btn-sm btn-success">{{$dataMateri->created_at->format('d, M Y')}}</p>
         </div>
       </div>
 
@@ -30,10 +29,11 @@
           </button>
         </div>
         <div class="modal-body">
-          <form action="{{ route('subMateri.store') }}" enctype="multipart/form-data" method="POST">
+          <form action="{{ route('dataMateri.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method("POST")
-            <input type="hidden" name="materi_id" value="{{$dataMateri->id}}">
+            <input type="hidden" name="materi_id" value="{{$dataMateri->materi->id}}">
+            <input type="hidden" name="sub_materi_id" value="{{$dataMateri->id}}">
               <div class="form-group">
                   <label for="">Kata</label>
                   <input type="text" class="form-control" name="kata">
@@ -66,7 +66,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($dataMateri->submateri as $item)
+
+@foreach ($dataMateri->data as $item)
                   <tr>
                     <th scope="row">1</th>
                     <td><img src="{{url('storage/'.$item->gambar)}}" alt="" width="100" height="100"></td>
@@ -80,9 +81,7 @@
                         <a href="" class="btn btn-danger btn-sm">Hapus</a>
                     </td>
                   </tr>
-
                   @endforeach
-
                 </tbody>
               </table>
           </div>

@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Pengajar;
 
 use App\DataMateri;
 use App\Http\Controllers\Controller;
-use App\SubMateri;
 use Illuminate\Http\Request;
-use Symfony\Component\VarDumper\Cloner\Data;
 
-class SubMateriController extends Controller
+class DataMateriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,15 +36,13 @@ class SubMateriController extends Controller
      */
     public function store(Request $request)
     {
-        $dataSubMatri = SubMateri::create($request->all());
-        return redirect()->back();
-
-        // $subMateri = $request->all();
-        // $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');
-        // $subMateri['sound'] = $request->file('sound')->store('assets/sound','public');
-        // $data = DataMateri::create($subMateri);
-        // //dd($product);
-        // return redirect()->back();
+        //dd($request->all());
+         $subMateri = $request->all();
+         $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');
+         $subMateri['sound'] = $request->file('sound')->store('assets/sound','public');
+         $data = DataMateri::create($subMateri);
+        //dd($product);
+         return redirect()->back();
     }
 
     /**
@@ -57,9 +53,7 @@ class SubMateriController extends Controller
      */
     public function show($id)
     {
-        $dataMateri = SubMateri::find($id);
-        $materi = DataMateri::all();
-        return view('pengajar.showMateri',compact('dataMateri','materi'));
+        //
     }
 
     /**

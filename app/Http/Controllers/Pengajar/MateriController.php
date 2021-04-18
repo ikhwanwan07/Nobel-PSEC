@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pengajar;
 
 use App\Http\Controllers\Controller;
 use App\Materi;
+use App\SubMateri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -62,7 +63,7 @@ class MateriController extends Controller
 
         //$getData = Storage::get($dataMateri->materi);
         //dd($getData);
-        return view('pengajar.showMateri',compact('dataMateri'));
+        return view('pengajar.submateri',compact('dataMateri'));
     }
 
     /**
