@@ -124,10 +124,10 @@
                             <td>{{$siswa->guru->nama}}</td>
                             <td>{{$siswa->kelas}}</td>
                             <td>
-                              <form action="" method="POST">
+                              <form action="{{ route('delete-siswa', $siswa->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+                                <a href="{{ route('edit-siswa', $siswa->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
                             </td>

@@ -74,6 +74,7 @@
                             <th>Judul Sub Materi</th>
                             <th>Data Materi</th>
                             <th>Links</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -82,13 +83,26 @@
                         @foreach ($dataMateri->submateri as $item)
                         <tr>
                             <td>{{$item->judul_sub}}</td>
-                            <td><a class="btn btn-info btn-sm" href="{{ route('subMateri.show', $item->id) }}">View</a></td>
-                            <th><a href="{{$item->link}}" target="_blank">Link</a></th>
+                            <td>
+                                @if ($item->status == 1)
+                                <a class="btn btn-primary btn-sm" href="{{ route('subMateri.show', $item->id) }}">View</a></td>
+
+                                @else
+                                <button class="btn btn-info btn-sm" disabled>View</button>
+                                @endif
+                            <td><a href="{{$item->link}}" target="_blank">Link</a></td>
+                            <td>
+                                @if ($item->status == 1)
+                                <button class="btn btn-success btn-sm">Tampil</button>
+                                @else
+                                <button class="btn btn-danger btn-sm">Tidak Tampil</button>
+                                @endif
+                            </td>
                             <td>
                               <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+                                <a href="{{ route('subMateri.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
                             </td>

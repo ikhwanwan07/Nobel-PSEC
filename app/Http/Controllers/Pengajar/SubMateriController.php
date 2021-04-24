@@ -70,7 +70,8 @@ class SubMateriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dataMateri = SubMateri::find($id);
+        return view('pengajar.editSubMateri',compact('dataMateri'));
     }
 
     /**
@@ -82,7 +83,9 @@ class SubMateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dataSubMateri = SubMateri::find($id);
+        $dataSubMateri->update($request->all());
+        return redirect()->back();
     }
 
     /**

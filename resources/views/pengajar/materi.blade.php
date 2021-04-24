@@ -81,7 +81,13 @@
                         <tr>
                             <td>{{$item->judul_materi}}</td>
                             <td>{{$item->kelas}}</td>
-                            <td><a class="btn btn-info btn-sm" href="{{ route('pengajar.show', $item->id) }}">View</a></td>
+                            <td>
+                                @if ($item->status == 1)
+                                <a class="btn btn-info btn-sm" href="{{ route('pengajar.show', $item->id) }}">View</a></td>
+                                @else
+                                <button class="btn btn-primary btn-sm" disabled>View</button>
+                                @endif
+
                             <td>
                                 @if ($item->status == 1)
                                 <button class="btn btn-success btn-sm">Tampil</button>

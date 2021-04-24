@@ -21,9 +21,16 @@ Route::get('index','Admin\AdminController@index');
 Route::get('siswa','Admin\AdminController@siswa');
 
 Route::post('siswa','Admin\AdminController@createSiswa')->name('create-siswa');
+Route::get('siswa/{id}','Admin\AdminController@editSiswa')->name('edit-siswa');
+Route::put('siswa/{id}','Admin\AdminController@updateSiswa')->name('update-siswa');
+Route::delete('siswa/{id}','Admin\AdminController@deleteSiswa')->name('delete-siswa');
 Route::get('guru','Admin\AdminController@pengajar');
 Route::post('guru','Admin\AdminController@createGuru')->name('create-guru');
+Route::get('guru/{id}','Admin\AdminController@editGuru')->name('edit-guru');
+Route::put('guru/{id}','Admin\AdminController@updateGuru')->name('update-guru');
+Route::delete('guru/{id}','Admin\AdminController@deleteGuru')->name('delete-guru');
 Route::get('user ','Admin\AdminController@user');
+Route::delete('user/{id} ','Admin\AdminController@deleteUser')->name('delete-user');
 Route::get('dashboard ','Admin\AdminController@dashboard');
 Route::get('pembayaran-admin','Admin\AdminController@pembayaran');
 //pengajar

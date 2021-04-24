@@ -24,8 +24,12 @@
                             <td>{{ $user->role}}</td>
                             <td>{{ $user->email }}</td>
                             <td>
-                                <a href="" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i>Edit</a>
-                                <a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>Hapus</a>
+                                <form action="{{ route('delete-user', $user->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a href="" class="btn btn-info btn-sm">Edit</a>
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
+                                  </form>
                             </td>
                         </tr>
                         @endforeach

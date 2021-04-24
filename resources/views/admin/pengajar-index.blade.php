@@ -83,8 +83,8 @@
                         <td>{{$guru->nama}}</td>
                         <td>{{$guru->nomor}}</td>
                             <td>
-                              <form action="" method="POST">
-                              <a href="" class="btn btn-info btn-sm">Edit</a>
+                              <form action="{{ route('delete-guru', $guru->id) }}" method="POST">
+                              <a href="{{ route('edit-guru', $guru->id) }}" class="btn btn-info btn-sm">Edit</a>
                               @csrf
                               @method("DELETE")
                                 <button type="submit" class="btn btn-sm btn-danger">Hapus</button>

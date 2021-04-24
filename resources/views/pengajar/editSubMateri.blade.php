@@ -5,7 +5,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('pengajar.update',$dataMateri->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('subMateri.update',$dataMateri->id) }}" method="POST" >
                 @csrf
                 @method("PUT")
                 @if ($errors->any())
@@ -17,24 +17,19 @@
                   </ul>
               </div>
           @endif
-          <input type="hidden" name="guru_id" value="{{$guru_id}}">
+          <input type="hidden" name="mater_id" value="{{$dataMateri->materi_id}}">
                 <div class="form-group">
                 <label for="">Judul Materi</label>
-                <input type="text" name="judul_materi" id="" class="form-control" value="{{$dataMateri->judul_materi}}">
+                <input type="text" name="judul_materi" id="" class="form-control" value="{{$dataMateri->judul_sub}}">
               </div>
-                <div class="form-group">
-                  <label for="">Kelas</label>
-                 <select name="kelas" id="" class="form-control" value="{{$dataMateri->kelas}}">
-                   <option value="Basic Junior 1">Basic Junior 1</option>
-                   <option value="Basic Junior 2">Basic Junior 2</option>
-                   <option value="Basic Senior 1">Basic Senior 1</option>
-                   <option value="Basic Senior 2">Basic Senior 2</option>
-                 </select>
-                </div>
                 <div class="form-group">
                   <label for="">Deskripsi</label>
                   <textarea name="deskripsi" id="" cols="30" rows="10" class="form-control">{{$dataMateri->deskripsi}}</textarea>
                 </div>
+                <div class="form-group">
+                    <label for="">Link</label>
+                    <input type="text" name="link" id="" class="form-control" value="{{$dataMateri->link}}">
+                  </div>
                 <div class="form-group">
                   <label for="">Status Soal</label>
                     <select name="status" id="" class="form-control" value="{{$dataMateri->status}}">

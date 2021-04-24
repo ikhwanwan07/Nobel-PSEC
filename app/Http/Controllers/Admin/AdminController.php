@@ -36,6 +36,15 @@ class AdminController extends Controller
         $user = User::all();
         return view('admin.user',compact('user'));
     }
+
+    public function deleteUser($id) {
+
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->back();
+    }
+
+
     public function pembayaran() {
         return view('admin.pembayaran');
     }
@@ -51,6 +60,7 @@ class AdminController extends Controller
           'nama' => 'required|string|max:255',
             'jenisKelamin' => 'required',
             'kota' => 'required|string|max:255',
+            'nomor' => 'required|min:10|unique:siswa',
             'tanggal' => 'required|date|max:255',
             'guru_id' => 'required|string|max:255',
             'kelas' => 'required',
@@ -80,24 +90,24 @@ class AdminController extends Controller
 
     public function editSiswa($id)
     {
-      $mahasiswa = \App\mahasiswa::find($id);
-      $data_dosen = \App\dosen::all();
-      return view('mahasiswa/edit',['mahasiswa'=> $mahasiswa],['data_dosen'=> $data_dosen]);
+      $siswa = \App\Siswa::find($id);
+      $guru = \App\Guru::all();
+      return view('admin.siswa-edit',compact('siswa','guru'));
     }
 
     public function updateSiswa(Request $request,$id)
     {
-      $mahasiswa = \App\mahasiswa::find($id);
-      $mahasiswa->update($request->all());
-      return redirect ('/mahasiswa')->with('sukses','data berhasil diupdate');
+      $siswa = \App\Siswa::find($id);
+      $siswa->update($request->all());
+      return redirect ('/siswa')->with('sukses','data berhasil diupdate');
 
     }
 
     public function deleteSiswa($id)
     {
-      $mahasiswa = \App\mahasiswa::find($id);
+      $mahasiswa = \App\Siswa::find($id);
       $mahasiswa->delete();
-      return redirect('/mahasiswa')->with('sukses','data berhasil didelete');
+      return redirect('/siswa')->with('sukses','data berhasil didelete');
     }
 
     //Dosen
@@ -129,25 +139,28 @@ class AdminController extends Controller
 
     //return $guru;
    return redirect('/guru')->with('success','data berhasil diinput');
-    }
-    public function edit($id)
-    {
-      $dosen = \App\dosen::find($id);
-      return view('dosen/edit',['dosen'=> $dosen]);
+
+}
 
 
-    }
-    public function update(Request $request,$id)
+    public function editGuru($id)
     {
-      $dosen = \App\dosen::find($id);
+      $guru = \App\Guru::find($id);
+      return view('admin.pengajar-edit',compact('guru'));
+
+    }
+    public function updateGuru(Request $request,$id)
+    {
+      $dosen = \App\Guru::find($id);
       $dosen->update($request->all());
-      return redirect ('/dosen')->with('success','data berhasil diupdate');
+      return redirect ('/guru')->with('success','data berhasil diupdate');
 
     }
-    public function delete($id)
+
+    public function deleteGuru($id)
     {
-      $dosen = \App\dosen::find($id);
+      $dosen = \App\Guru::find($id);
       $dosen->delete();
-      return redirect('/dosen')->with('sukses','data berhasil didelete');
+      return redirect('/guru')->with('sukses','data berhasil didelete');
     }
 }

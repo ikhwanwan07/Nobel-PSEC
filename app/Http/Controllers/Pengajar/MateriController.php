@@ -89,7 +89,7 @@ class MateriController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        $data['materi'] = $request->file('materi')->store('assets','public');
+        // $data['materi'] = $request->file('materi')->store('assets','public');
         $item = Materi::find($id);
         $item->update($data);
         return redirect()->route('materi');
