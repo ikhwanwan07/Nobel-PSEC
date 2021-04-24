@@ -65,6 +65,7 @@
                             <th>Judul</th>
                             <th>Link</th>
                             <th>Deskripsi</th>
+                            <th>Soal</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -79,11 +80,12 @@
                             <td>{{$item->judul_quiz}}</td>
                             <td><a href="{{$item->quiz}}" target="_blank" class="btn btn-primary btn-sm">Link</a></td>
                             <td>{{$item->deskripsi}}</td>
+                            <td>{{$item->soal}}</td>
                             <td>
-                              <form action="" method="POST">
+                              <form action="{{ route('quiz.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <a href="" class="btn btn-info btn-sm">Edit</a>
+                                <a href="{{ route('quiz.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
                             </td>

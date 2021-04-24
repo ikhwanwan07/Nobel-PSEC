@@ -59,7 +59,8 @@ class QuizController extends Controller
      */
     public function edit($id)
     {
-        //
+        $quizz = Quiz::find($id);
+        return view('pengajar.editQuiz',compact('quizz'));
     }
 
     /**
@@ -71,7 +72,9 @@ class QuizController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $quizz = Quiz::find($id);
+        $quizz->update($request->all());
+        return redirect('/quiz');
     }
 
     /**
@@ -82,6 +85,8 @@ class QuizController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $quizz = Quiz::find($id);
+        $quizz->delete();
+        return redirect()->back();
     }
 }
