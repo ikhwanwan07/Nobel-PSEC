@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/tester', function () {
+    return view('layouts.master1');
+});
 //admin
 Route::get('index','Admin\AdminController@index');
 Route::get('siswa','Admin\AdminController@siswa');
