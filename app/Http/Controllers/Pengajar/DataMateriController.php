@@ -64,9 +64,9 @@ class DataMateriController extends Controller
      */
     public function edit($id)
     {
-        $materi = DataMateri::find($id);
+        $dataMateri = DataMateri::find($id);
 
-        return view('pengajar.editDataMateri',compact('materi'));
+        return view('pengajar.editDataMateri',compact('dataMateri'));
     }
 
     /**
@@ -78,7 +78,13 @@ class DataMateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $con = $request->sub_materi_id;
+        $subMateri = $request->all();
+        $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');
+        $subMateri['sound'] = $request->file('sound')->store('assets/sound','public');
+        $data = DataMateri::find($id);
+        $data->update($subMateri);
+        return redirect()->route('subMateri.show',$con);
     }
 
     /**

@@ -85,7 +85,7 @@ class SubMateriController extends Controller
     {
         $dataSubMateri = SubMateri::find($id);
         $dataSubMateri->update($request->all());
-        return redirect()->back();
+        return redirect()->route('materi.');
     }
 
     /**

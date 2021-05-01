@@ -4,14 +4,14 @@
     <h1 class="mt-4">Data Materi</h1>
     <div class="card mb-3">
         <div class="card-body">
-            <form action="{{ route('dataMateri.store') }}" enctype="multipart/form-data" method="POST">
+            <form action="{{ route('dataMateri.update',$dataMateri->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
-                @method("POST")
-
-                <input type="input" name="sub_materi_id" value="{{$materi->submateri->id}}">
+                @method("PUT")
+                <input type="hidden" name="materi_id" value="{{$dataMateri->materi_id}}">
+            <input type="hidden" name="sub_materi_id" value="{{$dataMateri->sub_materi_id}}">
                   <div class="form-group">
                       <label for="">Kata</label>
-                      <input type="text" class="form-control" name="kata">
+                      <input type="text" class="form-control" name="kata" value="{{$dataMateri->kata}}">
                   </div>
                   <div class="form-group">
                       <label for="">Gambar</label>
@@ -22,13 +22,10 @@
                     <input type="file" name="sound" id="" class="form-control">
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-md mt-3 mb-5">Simpan</button>
+                <button type="submit" class="btn btn-primary btn-md mt-3 mb-5">Update</button>
               </form>
         </div>
       </div>
-
-
-
 @section('script')
 <script>
     $('.audio').click(function(e){

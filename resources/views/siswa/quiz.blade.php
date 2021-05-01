@@ -24,7 +24,7 @@
                         @foreach ($quiz as $item)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td><a href="{{$item->quiz}}" target="_blank">{{$item->quiz}}  </a></td>
+                            <td><a href="{{$item->quiz}}" target="_blank" class="btn btn-primary">Link</a></td>
                             <td>{{$item->deskripsi}}</td>
                             {{-- <td>
                               <form action="" method="POST">
