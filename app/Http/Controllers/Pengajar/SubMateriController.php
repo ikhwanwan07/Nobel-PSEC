@@ -38,6 +38,7 @@ class SubMateriController extends Controller
      */
     public function store(Request $request)
     {
+
         $dataSubMatri = SubMateri::create($request->all());
         return redirect()->back();
 
@@ -83,9 +84,12 @@ class SubMateriController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $con = $request->materi_id;
         $dataSubMateri = SubMateri::find($id);
         $dataSubMateri->update($request->all());
-        return redirect()->route('materi.');
+
+        //return $dataSubMateri;
+        return redirect()->route('pengajar.show',$con);
     }
 
     /**

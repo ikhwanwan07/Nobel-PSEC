@@ -17,7 +17,7 @@
                   </ul>
               </div>
           @endif
-          <input type="hidden" name="mater_id" value="{{$dataMateri->materi_id}}">
+          <input type="hidden" name="materi_id" value="{{$dataMateri->materi_id}}">
                 <div class="form-group">
                 <label for="">Judul Materi</label>
                 <input type="text" name="judul_materi" id="" class="form-control" value="{{$dataMateri->judul_sub}}">
