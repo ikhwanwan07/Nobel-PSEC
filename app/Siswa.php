@@ -21,4 +21,9 @@ class Siswa extends Model
     {
         return $this->hasMany('App\Pembayaran');
     }
+
+    public function nilai()
+    {
+        return $this->hasMany('App\Nilai');
+    }
 }

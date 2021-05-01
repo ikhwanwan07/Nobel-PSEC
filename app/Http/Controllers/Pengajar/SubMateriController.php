@@ -96,6 +96,11 @@ class SubMateriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dataSubMateri = SubMateri::find($id);
+        $dataSubMateri->delete();
+        return redirect()->back();
     }
+
+
+
 }

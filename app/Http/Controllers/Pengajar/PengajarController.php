@@ -48,4 +48,5 @@ class PengajarController extends Controller
         $quiz= Quiz::all();
         return view('pengajar.quiz',compact('quiz'));
     }
+
 }

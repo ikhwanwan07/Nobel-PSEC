@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Pengajar\PengajarController;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing');
 });
-Route::get('/tester', function () {
-    return view('layouts.master1');
-});
+// Route::get('/tester', function () {
+//     return view('layouts.master1');
+// });
 //admin
 Route::get('index','Admin\AdminController@index');
 Route::get('siswa','Admin\AdminController@siswa');
@@ -64,5 +65,6 @@ Route::get('soal-siswa/{id}','Siswa\SiswaController@showSoal')->name('showSoal')
 Route::get('view-materi','Siswa\SiswaController@viewMateri');
 Route::get('profile','Siswa\SiswaController@profile');
 Route::get('quiz-siswa','Siswa\SiswaController@quiz');
+Route::get('nilai-siswa','Siswa\SiswaController@nilai');
 Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');

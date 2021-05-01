@@ -64,7 +64,9 @@ class DataMateriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $materi = DataMateri::find($id);
+
+        return view('pengajar.editDataMateri',compact('materi'));
     }
 
     /**

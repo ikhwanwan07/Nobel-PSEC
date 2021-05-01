@@ -77,7 +77,7 @@
                       </audio>
                     </td>
                     <td>
-                        <a href="" class="btn btn-info btn-sm">Edit</a>
+                        <a href="{{ route('dataMateri.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                         <a href="" class="btn btn-danger btn-sm">Hapus</a>
                     </td>
                   </tr>

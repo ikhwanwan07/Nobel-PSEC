@@ -10,6 +10,7 @@ use App\Soal;
 use App\SubMateri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class SiswaController extends Controller
 {
@@ -71,5 +72,22 @@ class SiswaController extends Controller
     public function quiz(){
         $quiz = Quiz::all();
         return view('siswa.quiz',compact('quiz'));
+    }
+
+    public function nilai()
+    {
+        $getNilai =  DB::table('nilai')
+        ->select('quizzes.soal','nilai.nilai')
+        ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
+        ->where('quizzes.soal','=','pretest')
+        ->get();
+
+        $getNilai2 =  DB::table('nilai')
+        ->select('quizzes.soal','nilai.nilai')
+        ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
+        ->where('quizzes.soal','=','posttest')
+        ->get();
+
+        return view('siswa.nilai',compact('getNilai','getNilai2'));
     }
 }

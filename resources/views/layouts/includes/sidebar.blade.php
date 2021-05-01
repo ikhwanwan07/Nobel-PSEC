@@ -68,10 +68,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Dashboard
                             </a>
-                            <a class="nav-link" href="/jawaban">
+                            {{-- <a class="nav-link" href="/jawaban">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bar-chart"></i></div>
                                Jawaban
-                            </a>
+                            </a> --}}
                             <a class="nav-link" href="/pembayaran-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
                                 Pembayaran
@@ -87,6 +87,10 @@
                             <a class="nav-link" href="/quiz-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                                 Quiz
+                            </a>
+                            <a class="nav-link" href="/nilai-siswa">
+                                <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
+                                Nilai
                             </a>
                             @endif
                         </div>

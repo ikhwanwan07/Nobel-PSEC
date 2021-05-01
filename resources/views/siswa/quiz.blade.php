@@ -13,7 +13,7 @@
                             <th>NO</th>
                             <th>Link</th>
                             <th>Deskripsi</th>
-                            <th>Aksi</th>
+
                         </tr>
                     </thead>
 
@@ -26,14 +26,14 @@
                             <td>{{$no++}}</td>
                             <td><a href="{{$item->quiz}}" target="_blank">{{$item->quiz}}  </a></td>
                             <td>{{$item->deskripsi}}</td>
-                            <td>
+                            {{-- <td>
                               <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <a href="" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
