@@ -57,10 +57,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-graduation-cap"></i></div>
                                 Kelas
                             </a>
-                            <a class="nav-link" href="{{ route('pembayaran.index') }}">
+                            {{-- <a class="nav-link" href="{{ route('pembayaran.index') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
                                 Pembayaran
-                            </a>
+                            </a> --}}
                             @endif
                             @if (auth()->user()->role == 'siswa')
                             <div class="sb-sidenav-menu-heading">Siswa</div>
@@ -72,26 +72,26 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-bar-chart"></i></div>
                                Jawaban
                             </a> --}}
-                            <a class="nav-link" href="/pembayaran-siswa">
+                            {{-- <a class="nav-link" href="/pembayaran-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-money"></i></div>
                                 Pembayaran
-                            </a>
+                            </a> --}}
                             <a class="nav-link" href="/materi-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-bookmark-o"></i></div>
                                 Materi
                             </a>
-                            <a class="nav-link" href="/soal-siswa">
+                            {{-- <a class="nav-link" href="/soal-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                                Soal
-                            </a>
+                            </a> --}}
                             <a class="nav-link" href="/quiz-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
-                                Quiz
+                                Test
                             </a>
-                            <a class="nav-link" href="/nilai-siswa">
+                            {{-- <a class="nav-link" href="/nilai-siswa">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                                 Nilai
-                            </a>
+                            </a> --}}
                             @endif
                         </div>
                     </div>

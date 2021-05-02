@@ -22,7 +22,7 @@
                             <th>Judul Sub Materi</th>
                             <th>Data Materi</th>
                             <th>Links</th>
-                            <th>Aksi</th>
+
                         </tr>
                     </thead>
 
@@ -32,14 +32,14 @@
                             <td>{{$item->judul_sub}}</td>
                             <td><a class="btn btn-info btn-sm" href="{{ route('showSubMateri', $item->id) }}">View</a></td>
                             <th><a href="{{$item->link}}" target="_blank">Link</a></th>
-                            <td>
+                            {{-- <td>
                               <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <a href="" class="btn btn-info btn-sm">Edit</a>
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                               </form>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>

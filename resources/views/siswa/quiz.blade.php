@@ -11,8 +11,9 @@
                     <thead>
                         <tr>
                             <th>NO</th>
+                            <th>Judul</th>
                             <th>Link</th>
-                            <th>Deskripsi</th>
+
 
                         </tr>
                     </thead>
@@ -24,8 +25,9 @@
                         @foreach ($quiz as $item)
                         <tr>
                             <td>{{$no++}}</td>
+                            <td>{{$item->judul_quiz}}</td>
                             <td><a href="{{$item->quiz}}" target="_blank" class="btn btn-primary">Link</a></td>
-                            <td>{{$item->deskripsi}}</td>
+                            {{-- <td>{{$item->deskripsi}}</td> --}}
                             {{-- <td>
                               <form action="" method="POST">
                                 @csrf

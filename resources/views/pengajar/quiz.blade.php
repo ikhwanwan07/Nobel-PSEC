@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mt-4">DataTest</h1>
+    <h1 class="mt-4">Data Test</h1>
     <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
         Tambah Test
       </button>
@@ -11,7 +11,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Form Tambah Quiz</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Form Tambah Test</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -33,7 +33,7 @@
                 <input type="text" name="judul_quiz" id="" class="form-control">
               </div>
                   <div class="form-group">
-                    <label for="">Link Quiz</label>
+                    <label for="">Link Test</label>
                     <input type="text" name="quiz" id="" class="form-control">
                   </div>
                   <div class="form-group">
