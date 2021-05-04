@@ -99,7 +99,7 @@
                                 @endif
                             </td>
                             <td>
-                              <form action="" method="POST">
+                              <form action="{{ route('subMateri.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <a href="{{ route('subMateri.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>

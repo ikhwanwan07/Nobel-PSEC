@@ -95,6 +95,8 @@ class DataMateriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = DataMateri::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }

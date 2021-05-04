@@ -77,8 +77,12 @@
                       </audio>
                     </td>
                     <td>
-                        <a href="{{ route('dataMateri.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                        <form action="{{ route('dataMateri.destroy', $item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <a href="{{ route('dataMateri.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
+                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
+                          </form>
                     </td>
                   </tr>
                   @endforeach
