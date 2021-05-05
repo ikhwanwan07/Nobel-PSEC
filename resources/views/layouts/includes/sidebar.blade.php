@@ -45,7 +45,7 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                                 Latihan
                             </a> --}}
-                            <a class="nav-link" href="/quiz">
+                            <a class="nav-link" href="/test">
                                 <div class="sb-nav-link-icon"><i class="fa fa-tasks"></i></div>
                               Test
                             </a>

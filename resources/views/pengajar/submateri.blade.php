@@ -54,8 +54,9 @@
                   <div class="form-group">
                     <label for="">Status</label>
                     <select type="text" name="status" id="" class="form-control">
-                        <option value="0">Tidak Tampil</option>
                         <option value="1">Tampil</option>
+                        <option value="0">Tidak Tampil</option>
+
                     </select>
                   </div>
                   <button type="submit" class="btn btn-primary mb-5 mt-3">Simpan</button>

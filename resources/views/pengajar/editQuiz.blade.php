@@ -28,7 +28,7 @@
                 </div>
                 <div class="form-group">
                 <label for="">Soal</label>
-                <select name="soal" id="" class="form-control" value="{{$quizz->soal}}>
+                <select name="soal" id="" class="form-control" value="{{$quizz->soal}}">
                     <option value="pretest">PreTest</option>
                     <option value="posttest">PostTest</option>
                 </select>

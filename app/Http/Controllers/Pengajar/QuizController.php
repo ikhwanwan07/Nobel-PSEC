@@ -74,7 +74,7 @@ class QuizController extends Controller
     {
         $quizz = Quiz::find($id);
         $quizz->update($request->all());
-        return redirect('/quiz');
+        return redirect('/test');
     }
 
     /**
