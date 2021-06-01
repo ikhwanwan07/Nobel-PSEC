@@ -56,7 +56,7 @@ class PembayaranController extends Controller
     {
         $dataSiswa = Siswa::findOrFail($id);
         $dataSiswa1 = Auth::user()->guru->siswa;
-        //return $dataSiswa;
+        //return $dataSiswa1;
         return view('pengajar.pembayaran-detail',compact('dataSiswa','dataSiswa1'));
     }
 
@@ -68,9 +68,9 @@ class PembayaranController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
 
+
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -80,7 +80,7 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -91,6 +91,8 @@ class PembayaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dataPembayaran = Pembayaran::find($id);
+        $dataPembayaran->delete();
+        return redirect()->back();
     }
 }

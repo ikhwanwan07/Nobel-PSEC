@@ -93,7 +93,7 @@
                             </td>
                             <td>
 
-                                <form action="" method="POST">
+                                <form action="{{ route('pembayaran.destroy', $data->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <a href="" class="btn btn-info btn-sm">Edit</a>
