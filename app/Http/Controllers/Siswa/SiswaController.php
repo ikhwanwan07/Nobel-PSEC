@@ -16,7 +16,26 @@ class SiswaController extends Controller
 {
     public function dashboard()
     {
-        return view('siswa.dashboard');
+        $auth = auth()->user()->siswa->id;
+        $getNilai = DB::table('nilai')
+        ->select('quizzes.judul_quiz','quizzes.soal','nilai.nilai')
+        ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
+        ->where('quizzes.soal','=','pretest')
+        ->where('nilai.siswa_id','=',$auth)
+        ->get();
+
+        $data = [];
+      $data2 = [];
+      foreach($getNilai as $m)
+      {
+        if($getNilai->first()){
+        $data[] = $m->judul_quiz;
+        $data2[] = $m->nilai;
+      }
+      }
+      //dd($auth);
+        //dd($getNilai);
+        return view('siswa.dashboard',compact('data','data2'));
     }
     public function jawaban(){
         $dataJawaban = Jawaban::all();
