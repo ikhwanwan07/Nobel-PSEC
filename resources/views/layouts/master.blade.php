@@ -8,6 +8,7 @@
         <meta name="author" content="" />
         <title>PSEC Pasarwajo</title>
         <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
+        <link href="{{ asset('admin/css/main.css') }}" rel="stylesheet" />
         <link rel="stylesheet" href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}">
         {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> --}}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
