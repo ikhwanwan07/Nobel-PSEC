@@ -60,15 +60,17 @@ class NilaiController extends Controller
         ->select('quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','pretest')
+        ->where('nilai.siswa_id','=',$id)
         ->get();
 
         $getNilai2 =  DB::table('nilai')
         ->select('quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','posttest')
+        ->where('nilai.siswa_id','=',$id)
         ->get();
-        //dd($getNilai)->json_decode();
-        return view('pengajar.view-nilai',compact('siswa','getQuiz','getNilai','getNilai2'));
+        //dd($id);
+       return view('pengajar.view-nilai',compact('siswa','getQuiz','getNilai','getNilai2'));
     }
 
     /**

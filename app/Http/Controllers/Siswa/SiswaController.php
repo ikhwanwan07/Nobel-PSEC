@@ -17,14 +17,14 @@ class SiswaController extends Controller
     public function dashboard()
     {
         $auth = auth()->user()->siswa->id;
-        $getNilai = DB::table('nilai')
+        $getN = DB::table('nilai')
         ->select('quizzes.judul_quiz','quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','pretest')
         ->where('nilai.siswa_id','=',$auth)
         ->get();
 
-        $getNilai2 = DB::table('nilai')
+        $get2 = DB::table('nilai')
         ->select('quizzes.judul_quiz','quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','posttest')
@@ -34,18 +34,18 @@ class SiswaController extends Controller
 
       $data = [];
       $data2 = [];
-      foreach($getNilai as $m)
+      foreach($getN as $m)
       {
-        if($getNilai->first()){
+        if($getN->first()){
         $data[] = $m->judul_quiz;
         $data2[] = $m->nilai;
       }
       }
       $data3 = [];
       $data4 = [];
-      foreach($getNilai2 as $m)
+      foreach($get2 as $m)
       {
-        if($getNilai2->first()){
+        if($get2->first()){
         $data3[] = $m->judul_quiz;
         $data4[] = $m->nilai;
       }
@@ -112,16 +112,19 @@ class SiswaController extends Controller
 
     public function nilai()
     {
+        $auth = auth()->user()->siswa->id;
         $getNilai =  DB::table('nilai')
         ->select('quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','pretest')
+        ->where('nilai.siswa_id','=',$auth)
         ->get();
 
         $getNilai2 =  DB::table('nilai')
         ->select('quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','posttest')
+        ->where('nilai.siswa_id','=',$auth)
         ->get();
 
         return view('siswa.nilai',compact('getNilai','getNilai2'));
