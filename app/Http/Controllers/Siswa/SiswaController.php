@@ -24,7 +24,15 @@ class SiswaController extends Controller
         ->where('nilai.siswa_id','=',$auth)
         ->get();
 
-        $data = [];
+        $getNilai2 = DB::table('nilai')
+        ->select('quizzes.judul_quiz','quizzes.soal','nilai.nilai')
+        ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
+        ->where('quizzes.soal','=','posttest')
+        ->where('nilai.siswa_id','=',$auth)
+        ->get();
+
+
+      $data = [];
       $data2 = [];
       foreach($getNilai as $m)
       {
@@ -33,9 +41,18 @@ class SiswaController extends Controller
         $data2[] = $m->nilai;
       }
       }
+      $data3 = [];
+      $data4 = [];
+      foreach($getNilai2 as $m)
+      {
+        if($getNilai2->first()){
+        $data3[] = $m->judul_quiz;
+        $data4[] = $m->nilai;
+      }
+      }
       //dd($auth);
-        //dd($getNilai);
-        return view('siswa.dashboard',compact('data','data2'));
+       // dd($getNilai2);
+       return view('siswa.dashboard',compact('data','data2','data3','data4'));
     }
     public function jawaban(){
         $dataJawaban = Jawaban::all();
