@@ -16,17 +16,21 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Nama Siswa</th>
                             <th>Kelas</th>
-
                             <th>Action</th>
 
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($dataSiswa as $data)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$data->nama}}</td>
                             <td>{{$data->kelas}}</td>
                             <td>

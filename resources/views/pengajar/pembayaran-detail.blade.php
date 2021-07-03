@@ -30,8 +30,8 @@
              <div class="form-group">
                  <label for="">Nama siswa</label>
                  <select name="siswa_id" id="" class="form-control">
+                    <option value="">Pilih siswa</option>
                      @foreach ($dataSiswa1 as $siswa)
-                     <option value="">Pilih siswa</option>
                      <option value="{{$siswa->id}}">{{$siswa->nama}}</option>
                      @endforeach
                  </select>

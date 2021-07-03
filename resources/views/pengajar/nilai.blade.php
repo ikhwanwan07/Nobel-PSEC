@@ -58,6 +58,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Nama Siswa</th>
                             <th>Jenis kelamin</th>
                             <th>Kota</th>
@@ -65,8 +66,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($kelas as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td><a href="{{ route('nilai.show', $item->id) }}">{{$item->nama}}</a></td>
                             <td>{{$item->jenisKelamin}}</td>
                             <td>{{$item->kota}}</td>

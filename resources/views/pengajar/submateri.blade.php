@@ -85,12 +85,12 @@
                         <tr>
                             <td>{{$item->judul_sub}}</td>
                             <td>
-                                @if ($item->status == 1)
+                                {{-- @if ($item->status == 1) --}}
                                 <a class="btn btn-primary btn-sm" href="{{ route('subMateri.show', $item->id) }}">View</a></td>
 
-                                @else
+                                {{-- @else
                                 <button class="btn btn-info btn-sm" disabled>View</button>
-                                @endif
+                                @endif --}}
                             <td><a href="{{$item->link}}" target="_blank">Link</a></td>
                             <td>
                                 @if ($item->status == 1)

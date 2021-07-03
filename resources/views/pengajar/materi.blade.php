@@ -68,6 +68,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Judul Materi</th>
                             <th>Kelas</th>
                             <th>Materi</th>
@@ -77,16 +78,20 @@
                     </thead>
 
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($materi as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$item->judul_materi}}</td>
                             <td>{{$item->kelas}}</td>
                             <td>
-                                @if ($item->status == 1)
+                                {{-- @if ($item->status == 1) --}}
                                 <a class="btn btn-info btn-sm" href="{{ route('pengajar.show', $item->id) }}">View</a></td>
-                                @else
+                                {{-- @else
                                 <button class="btn btn-primary btn-sm" disabled>View</button>
-                                @endif
+                                @endif --}}
 
                             <td>
                                 @if ($item->status == 1)

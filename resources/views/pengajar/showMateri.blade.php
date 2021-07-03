@@ -66,10 +66,12 @@
                   </tr>
                 </thead>
                 <tbody>
-
-@foreach ($dataMateri->data as $item)
+                    <?php
+                    $no =1;
+                    ?>
+    @foreach ($dataMateri->data as $item)
                   <tr>
-                    <th scope="row">1</th>
+                    <td>{{$no++}}</td>
                     <td><img src="{{url('storage/'.$item->gambar)}}" alt="" width="100" height="100"></td>
                     <td>{{$item->kata}}</td>
                     <td><audio controls  data-id="2">
