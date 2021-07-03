@@ -13,4 +13,8 @@ class Nilai extends Model
     {
         return $this->belongsTo('App\Siswa');
     }
+
+    public function quizzes(){
+        return $this->belongsTo('App\Quiz');
+    }
 }

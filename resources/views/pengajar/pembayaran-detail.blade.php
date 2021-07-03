@@ -29,12 +29,8 @@
             @method('POST')
              <div class="form-group">
                  <label for="">Nama siswa</label>
-                 <select name="siswa_id" id="" class="form-control">
-                    <option value="">Pilih siswa</option>
-                     @foreach ($dataSiswa1 as $siswa)
-                     <option value="{{$siswa->id}}">{{$siswa->nama}}</option>
-                     @endforeach
-                 </select>
+                 <input type="hidden" name="siswa_id" value="{{$dataSiswa->id}}">
+                 <input type="text"  class="form-control" value="{{$dataSiswa->nama}}" disabled>
              </div>
              <div class="form-group">
                  <label for="">Pembayaran ke</label>
@@ -70,6 +66,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Nama Siswa</th>
                             <th>Pembayaran Ke</th>
                             <th>Status</th>
@@ -79,8 +76,12 @@
                     </thead>
 
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($dataSiswa->pembayaran as $data)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$data->siswa->nama}}</td>
                             <td>{{$data->pembayaran_ke}}</td>
                             <td>

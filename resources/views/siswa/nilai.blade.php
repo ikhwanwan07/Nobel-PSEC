@@ -103,8 +103,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                        $no =1;
+                        ?>
                                 @foreach ($getNilai2 as $item)
                                 <tr>
+                                    <td>{{$no++}}</td>
                                     <td>{{auth()->user()->siswa->nama}}</td>
                                     <td>{{$item->soal}}</td>
                                     <td>{{$item->nilai}}</td>

@@ -27,7 +27,7 @@
                             <td>{{$item->judul_materi}}</td>
                             <td>
                                 @if ($item->status == 1)
-                                <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm" disabled>View</a>
+                                <a href="{{ route('showMateri',$item->id) }}" class="btn btn-info btn-sm" >View</a>
                                 @else
                                 <button type="button" class="btn btn-sm btn-info" disabled>View</button>
                                 @endif

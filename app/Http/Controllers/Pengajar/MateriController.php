@@ -39,6 +39,11 @@ class MateriController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'judul_materi' => 'required|string|max:255',
+              'kelas' => 'required',
+              'deskripsi' => 'min:10|max:255',
+          ]);
 
         $product = $request->all();
         //$product['materi'] = $request->file('materi')->store('assets','public');
@@ -60,7 +65,6 @@ class MateriController extends Controller
     public function show($id)
     {
         $dataMateri = Materi::find($id);
-
         //$getData = Storage::get($dataMateri->materi);
         //dd($getData);
         return view('pengajar.submateri',compact('dataMateri'));
@@ -88,6 +92,11 @@ class MateriController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'judul_materi' => 'required|string|max:255',
+              'kelas' => 'required',
+              'deskripsi' => 'min:10|max:255',
+          ]);
         $data = $request->all();
         // $data['materi'] = $request->file('materi')->store('assets','public');
         $item = Materi::find($id);

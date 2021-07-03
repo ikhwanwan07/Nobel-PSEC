@@ -7,6 +7,15 @@
             <form action="{{ route('dataMateri.update',$dataMateri->id) }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 @method("PUT")
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
                 <input type="hidden" name="materi_id" value="{{$dataMateri->materi_id}}">
             <input type="hidden" name="sub_materi_id" value="{{$dataMateri->sub_materi_id}}">
                   <div class="form-group">

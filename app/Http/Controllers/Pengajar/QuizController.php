@@ -36,6 +36,12 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'judul_quiz' => 'required|string|max:255',
+              'quiz' => 'required',
+              'soal' => 'required',
+              'deskripsi' => 'required|min:10|max:255',
+          ]);
         $quizz = Quiz::create($request->all());
         return redirect()->back();
     }
@@ -72,6 +78,12 @@ class QuizController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'judul_quiz' => 'required|string|max:255',
+              'quiz' => 'required',
+              'soal' => 'required',
+              'deskripsi' => 'required|min:10|max:255',
+          ]);
         $quizz = Quiz::find($id);
         $quizz->update($request->all());
         return redirect('/test');

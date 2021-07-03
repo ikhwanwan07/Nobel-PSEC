@@ -19,6 +19,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Judul Sub Materi</th>
                             <th>Data Materi</th>
                             <th>Links</th>
@@ -27,11 +28,22 @@
                     </thead>
 
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($dataMateri->submateri as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$item->judul_sub}}</td>
+                            @if ($item->status == 1)
                             <td><a class="btn btn-info btn-sm" href="{{ route('showSubMateri', $item->id) }}">View</a></td>
                             <th><a href="{{$item->link}}" target="_blank">Link</a></th>
+                            @else
+                            <td><button class="btn btn-info btn-sm" disabled>View</button></td>
+                            <th><button class="btn btn-info btn-sm"" disabled>Link</button></th>
+                            @endif
+
+
                             {{-- <td>
                               <form action="" method="POST">
                                 @csrf

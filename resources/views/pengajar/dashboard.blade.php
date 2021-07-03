@@ -7,7 +7,7 @@
             <div class="card bg-warning text-white mb-4">
                 <div class="card-body text-center">Rata Rata Nilai Pretest</div>
                 <h1 class="text-center">
-                    {{$fix2}}
+                    {{$fix1}}
                 </h1>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="#">View Details</a>
@@ -18,7 +18,7 @@
         <div class="col-xl-4 col-md-6">
             <div class="card bg-success text-white mb-4">
                 <div class="card-body text-center">Rata-Rata Nilai PostTest</div>
-                <h1 class="text-center">{{$fix1}}</h1>
+                <h1 class="text-center">{{$fix2}}</h1>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="#">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

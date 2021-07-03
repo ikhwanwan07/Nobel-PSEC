@@ -32,6 +32,15 @@
           <form action="{{ route('dataMateri.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             @method("POST")
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             <input type="hidden" name="materi_id" value="{{$dataMateri->materi->id}}">
             <input type="hidden" name="sub_materi_id" value="{{$dataMateri->id}}">
               <div class="form-group">

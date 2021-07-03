@@ -13,6 +13,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Nama Siswa</th>
                             <th>Pembayaran</th>
                             <th>Status</th>
@@ -20,8 +21,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($dataPembayaran as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$item->siswa->nama}}</td>
                             <td>{{$item->pembayaran_ke}}</td>
                             <td>

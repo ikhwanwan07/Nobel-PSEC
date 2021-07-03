@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pengajar;
 use App\Http\Controllers\Controller;
 use App\Materi;
 use App\Quiz;
+use App\Siswa;
 use App\Soal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,10 +26,14 @@ class PengajarController extends Controller
         ->groupBy('guru_id')
         ->get();
 
-        foreach($dataNilai as $m){
-            $fixNilai = $m->rata;
-            $fix2 = substr($fixNilai,0,2);
-        }
+         if($dataNilai->isEmpty()){
+             $data = 0;
+        }else{
+            foreach($dataNilai as $m){
+                $fixNilai = $m->rata;
+                $fix1 = substr($fixNilai,0,2);
+            }
+         }
 
         $dataNilai2 = DB::table('siswa')
         ->select(DB::raw('AVG(nilai) as rata'))
@@ -40,13 +45,13 @@ class PengajarController extends Controller
         ->get();
 
         foreach($dataNilai2 as $m1){
-            $fixNilai1 = $m1->rata;
-            $fix1 = substr($fixNilai1,0,2);
+            $fixNilai2 = $m1->rata;
+            $fix2 = substr($fixNilai2,0,2);
         }
 
 //cara ubah object ke integer /string
-     //return $fix2;
-      return view('pengajar.dashboard',compact('fix2','fix1'));
+
+     return view('pengajar.dashboard',compact('fix1','fix2'));
     }
     public function materi(){
 
@@ -80,5 +85,13 @@ class PengajarController extends Controller
         $quiz= Quiz::all();
         return view('pengajar.quiz',compact('quiz'));
     }
+
+    public function getProfile($id) {
+        $getProfile = Siswa::find($id);
+
+        return view('pengajar.profile',compact('getProfile'));
+
+    }
+
 
 }

@@ -72,6 +72,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>Judul Sub Materi</th>
                             <th>Data Materi</th>
                             <th>Links</th>
@@ -81,8 +82,12 @@
                     </thead>
 
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($dataMateri->submateri as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$item->judul_sub}}</td>
                             <td>
                                 {{-- @if ($item->status == 1) --}}

@@ -78,6 +78,7 @@ class DataMateriController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $con = $request->sub_materi_id;
         $subMateri = $request->all();
         $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');

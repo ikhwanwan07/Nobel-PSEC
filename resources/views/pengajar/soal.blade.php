@@ -77,8 +77,12 @@
                     </thead>
 
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($dataSoal as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$item->kelas}}</td>
                             <td>{{$item->deskripsi}}</td>
                             <td>{{$item->status}}</td>

@@ -10,4 +10,9 @@ class Quiz extends Model
 
     protected $fillable = ['judul_quiz','quiz','soal','deskripsi'];
 
+    public function nilai()
+    {
+        return $this->hasMany('App\Nilai');
+    }
+
 }

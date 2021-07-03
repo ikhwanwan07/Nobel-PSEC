@@ -39,7 +39,9 @@ class NilaiController extends Controller
      */
     public function store(Request $request)
     {
-
+        $this->validate($request,[
+            'nilai' => 'required|numeric|min:0|max:100',
+          ]);
         //dd($request->all());
         $nilai = Nilai::create($request->all());
 

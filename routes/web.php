@@ -52,6 +52,7 @@ Route::get('soal','Pengajar\PengajarController@soal')->name('soalIndex');
 Route::get('nilai','Pengajar\PengajarController@nilai');
 Route::get('kelas','Pengajar\PengajarController@kelas');
 Route::get('jawaban-siswa','Pengajar\PengajarController@jawaban');
+Route::get('profile/{id}','Pengajar\PengajarController@getProfile')->name('getProfile');
 //Siswa
 Route::resource('jawaban-siswa', 'Siswa\JawabanController');
 Route::get('dashboard-siswa','Siswa\SiswaController@dashboard');

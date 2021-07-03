@@ -38,7 +38,11 @@ class SubMateriController extends Controller
      */
     public function store(Request $request)
     {
-
+        $this->validate($request,[
+            'judul_sub' => 'required|string|max:255',
+              'status' => 'required',
+              'deskripsi' => 'required|min:10|max:255',
+          ]);
         $dataSubMatri = SubMateri::create($request->all());
         return redirect()->back();
 

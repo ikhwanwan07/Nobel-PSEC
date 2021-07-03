@@ -18,8 +18,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        $no =1;
+                        ?>
                         @foreach ($soal as $item)
                         <tr>
+                            <td>{{$no++}}</td>
                             <td>{{$item->kelas}}</td>
                             <td>{{$item->created_at->format('d-h-Y')}}</td>
                             <td>{{auth::user()->siswa->guru->nama}}</td>

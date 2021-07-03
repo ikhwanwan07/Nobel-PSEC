@@ -41,6 +41,10 @@ class PembayaranController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'pembayaran' => 'required',
+            'status' => 'required',
+          ]);
        $dataPembayaran = Pembayaran::create($request->all());
        //return $request->all();
        return redirect()->back();
@@ -57,7 +61,7 @@ class PembayaranController extends Controller
         $dataSiswa = Siswa::findOrFail($id);
         $dataSiswa1 = Auth::user()->guru->siswa;
         //return $dataSiswa1;
-        return view('pengajar.pembayaran-detail',compact('dataSiswa','dataSiswa1'));
+        return view('pengajar.pembayaran-detail',compact('dataSiswa'));
     }
 
     /**

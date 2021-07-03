@@ -69,17 +69,24 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nama Siswa</th>
-                                <th>Soal</th>
+                                <th>Judul Soal</th>
                                 <th>Nilai</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                        $no =1;
+                        ?>
                             @foreach ($getNilai as $item)
                             <tr>
+                                <td>{{$no++}}</td>
                                 <td>{{$siswa->nama}}</td>
+                                {{-- judul quiz --}}
                                 <td>{{$item->soal}}</td>
+                                {{-- end judul quiz --}}
                                 <td>{{$item->nilai}}</td>
                                 <td>
                                     <form action="" method="POST">
@@ -111,8 +118,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                        $no =1;
+                        ?>
                                 @foreach ($getNilai2 as $item)
                                 <tr>
+                                    <td>{{$no++}}</td>
                                     <td>{{$siswa->nama}}</td>
                                     <td>{{$item->soal}}</td>
                                     <td>{{$item->nilai}}</td>

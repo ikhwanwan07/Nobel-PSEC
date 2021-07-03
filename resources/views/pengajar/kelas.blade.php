@@ -38,7 +38,7 @@
                             @foreach ($kelas as $kelas)
                             <tr>
                                 <td>{{$no++}}</td>
-                                <td> <a href="">{{$kelas->nama}}</a></td>
+                                <td> <a href="{{ route('getProfile', $kelas->id) }}">{{$kelas->nama}}</a></td>
                                 <td>{{$kelas->kelas}}</td>
                                 <td>{{$kelas->jenisKelamin}}</td>
                                 <td>{{$kelas->kota}}</td>
