@@ -85,6 +85,10 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'pembayaran' => 'required',
+            'status' => 'required',
+          ]);
         $getId = $request->siswa_id;
         $getPembayaran = Pembayaran::find($id);
         $getPembayaran->update($request->all());

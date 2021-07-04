@@ -37,6 +37,11 @@ class DataMateriController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
+        $this->validate($request,[
+            'kata' => 'required',
+            'gambar' => 'required|mimes:png,jpg|file|size:1028',
+            'sound' => 'required',
+          ]);
          $subMateri = $request->all();
          $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');
          $subMateri['sound'] = $request->file('sound')->store('assets/sound','public');
@@ -78,7 +83,11 @@ class DataMateriController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $this->validate($request,[
+            'kata' => 'required',
+            'gambar' => 'required|mimes:png,jpg|file|size:1028',
+            'sound' => 'required',
+          ]);
         $con = $request->sub_materi_id;
         $subMateri = $request->all();
         $subMateri['gambar'] = $request->file('gambar')->store('assets/gambar','public');
