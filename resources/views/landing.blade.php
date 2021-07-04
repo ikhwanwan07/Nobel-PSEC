@@ -101,9 +101,9 @@
           <div class="col-lg-6 content order-lg-1 order-2">
             <h2 class="title">Tentang PSEC</h2>
             <p>
-              Pasarwajo Speech English Course adalah lembaga bimbingan belajar Bahasa Inggris juga berperan 
-              dalam mempersiapkan masyarakat khususnya pelajar untuk menyambut tamu internasional. Lembaga ini 
-              bekerja sama dengan Pemerintah Kabupaten Buton dalam menghasilkan pemandu wisata (guide) baik dewasa 
+              Pasarwajo Speech English Course adalah lembaga bimbingan belajar Bahasa Inggris juga berperan
+              dalam mempersiapkan masyarakat khususnya pelajar untuk menyambut tamu internasional. Lembaga ini
+              bekerja sama dengan Pemerintah Kabupaten Buton dalam menghasilkan pemandu wisata (guide) baik dewasa
               maupun pelajar.
             </p>
 
@@ -176,7 +176,7 @@
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-book"></i></a></div>
               <h4 class="title"><a href="">Materi Terstruktur</a></h4>
-              <p class="description">Materi yang dibuat berdasarkan pengalaman mengajar dan disesuaikan 
+              <p class="description">Materi yang dibuat berdasarkan pengalaman mengajar dan disesuaikan
               dengan kurikulum di sekolah</p>
             </div>
           </div>
@@ -192,7 +192,7 @@
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-code"></i></a></div>
               <h4 class="title"><a href="">Dijamin Bisa</a></h4>
-              <p class="description">Ayo bergabung dengan kami dijamin bisa berkumunikasi 
+              <p class="description">Ayo bergabung dengan kami dijamin bisa berkumunikasi
               dan praktik langsung dengan tamu internasional</p>
             </div>
           </div>
@@ -213,7 +213,7 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
             <h3 class="cta-title">Tertarik Bergabung ?</h3>
-            <p class="cta-text">PSEC mempunyai visi dan misi menghasilkan generasi muda yang bisa berbahasa inggris 
+            <p class="cta-text">PSEC mempunyai visi dan misi menghasilkan generasi muda yang bisa berbahasa inggris
             sejak dini.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
@@ -388,7 +388,7 @@
             <div class="member">
               <div class="pic"><img src="{{ asset('regna/img/team-1.jpg') }}" alt=""></div>
               <h4>Andini Claudia</h4>
-              <span>Chief Executive Officer</span>
+              <span>"I experienced many new things because of english"</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -402,7 +402,7 @@
             <div class="member">
               <div class="pic"><img src="{{ asset('regna/img/team-2.jpg') }}" alt=""></div>
               <h4>Ririn Apriani</h4>
-              <span>IT Leader</span>
+              <span>"Easy part to reach your dreams is wake up"</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -414,9 +414,9 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{ asset('regna/img/ikhwan.PNG') }}"  alt=""></div>
+              <div class="pic"><img src="{{ asset('regna/img/indrawati.jpg') }}"  alt=""></div>
               <h4>Indrawati</h4>
-              <span>Programmer</span>
+              <span>"From Zero to Hero, we never guess everything in the future,but we can plan it today"</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -428,9 +428,9 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="{{ asset('regna/img/team5.jpg') }}" style="width: 262px; height: 262px;" alt=""></div>
+              <div class="pic"><img src="{{ asset('regna/img/ruslan.jpg') }}" style="width: 262px; height: 262px;" alt=""></div>
               <h4>Ruslan Hamzah</h4>
-              <span>Graphic Design</span>
+              <span>"English will bright your future"</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -456,7 +456,7 @@
       </div>
 
       <!-- Uncomment below if you wan to use dynamic maps -->
-      
+
 
       <div class="container wow fadeInUp mt-5">
         <div class="row justify-content-center">
@@ -490,7 +490,7 @@
 
           </div>
 
-          
+
 
         </div>
 

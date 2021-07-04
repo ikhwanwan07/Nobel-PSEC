@@ -97,7 +97,7 @@
                                 <form action="{{ route('pembayaran.destroy', $data->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="" class="btn btn-info btn-sm">Edit</a>
+                                    <a href="{{ route('pembayaran.edit', $data->id)}}" class="btn btn-info btn-sm">Edit</a>
                                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                                   </form>
                             </td>

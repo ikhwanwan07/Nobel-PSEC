@@ -72,7 +72,7 @@ class PembayaranController extends Controller
      */
     public function edit($id)
     {
-
+        return "edit";
 
     }
     /**
