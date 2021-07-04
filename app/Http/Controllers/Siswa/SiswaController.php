@@ -40,6 +40,8 @@ class SiswaController extends Controller
         $data[] = $m->judul_quiz;
         $data2[] = $m->nilai;
       }
+
+    //   dd($data2);
       }
       $data3 = [];
       $data4 = [];

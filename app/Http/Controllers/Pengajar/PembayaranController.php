@@ -72,7 +72,8 @@ class PembayaranController extends Controller
      */
     public function edit($id)
     {
-        return "edit";
+        $pembayaran = Pembayaran::find($id);
+        return view('pengajar.pembayaran-detail-edit',compact('pembayaran'));
 
     }
     /**

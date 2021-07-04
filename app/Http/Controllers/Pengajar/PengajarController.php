@@ -7,15 +7,52 @@ use App\Materi;
 use App\Quiz;
 use App\Siswa;
 use App\Soal;
+use App\Nilai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class PengajarController extends Controller
 {
+    // helper function to count average of array
+    function average($array)
+    {
+        $total = 0;
+        foreach ($array as $item) {
+            $total += $item;
+        };
+        return $total/count($array);
+    }
 
+    function calculateAverageQuizzes($id_guru, $type){
+        $raw_data_quizzes = Nilai::with(['siswa', 'quizzes'])
+        ->whereHas('siswa', function($query) use($id_guru){
+            $query->where('guru_id', $id_guru);
+        })
+        ->whereHas('quizzes', function($query) use($type){
+            $query->where('soal', $type);
+        })
+        ->get();
+
+        $data_quizzes = [];
+        foreach($raw_data_quizzes as $key => $item){
+            $data_quizzes[$item['quizzes']['judul_quiz']][] = $item['nilai'];
+        }
+
+        $final_quizzes = [];
+        foreach($data_quizzes as $key => $quizzes){
+            $final_quizzes[$key] = $this->average($quizzes);
+        }
+
+        return $final_quizzes;
+    }
+
+    // main function
     public function dashboard()
     {
+        $fix2 = null;
+        $fix1 = null;
+
         $auth = auth()->user()->guru->id;
         $dataNilai = DB::table('siswa')
         ->select(DB::raw('AVG(nilai) as rata'))
@@ -26,7 +63,18 @@ class PengajarController extends Controller
         ->groupBy('guru_id')
         ->get();
 
-         if($dataNilai->isEmpty()){
+       $data_pretest = $this->calculateAverageQuizzes($auth, 'pretest');
+       $data_posttest = $this->calculateAverageQuizzes($auth, 'posttest');
+
+       // pretest
+       $data = array_keys($data_pretest);
+       $data2 = array_values($data_pretest);
+
+       // posttest
+       $data3 = array_keys($data_posttest);
+       $data4 = array_values($data_posttest);
+
+        if($dataNilai->isEmpty()){
              $data = 0;
         }else{
             foreach($dataNilai as $m){
@@ -51,7 +99,7 @@ class PengajarController extends Controller
 
 //cara ubah object ke integer /string
 
-     return view('pengajar.dashboard',compact('fix1','fix2'));
+     return view('pengajar.dashboard',compact('fix1','fix2','data','data2','data3','data4'));
     }
     public function materi(){
 
