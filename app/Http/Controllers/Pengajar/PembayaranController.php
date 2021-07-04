@@ -85,6 +85,11 @@ class PembayaranController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $getId = $request->siswa_id;
+        $getPembayaran = Pembayaran::find($id);
+        $getPembayaran->update($request->all());
+
+        return redirect()->route('pembayaran.show',$getId);
 
     }
 

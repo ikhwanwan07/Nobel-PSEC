@@ -15,18 +15,18 @@
 
 
         <div class="card-body">
-            <form action="" method="POST">
+            <form action="{{ route('pembayaran.update',$pembayaran->id ) }}" method="POST">
                 @csrf
                 @method('PUT')
                  <div class="form-group">
                      <label for="">Nama siswa</label>
-                     <input type="hidden" name="siswa_id" value="{{$pembayaran->id}}">
+                     <input type="hidden" name="siswa_id" value="{{$pembayaran->siswa_id}}">
                      <input type="text"  class="form-control" value="{{$pembayaran->siswa->nama}}" disabled>
                  </div>
                  <div class="form-group">
                      <label for="">Pembayaran ke</label>
-                    <select name="pembayaran_ke" id=""  class="form-control" value="{{$pembayaran->siswa->nama}}">
-                        <option value="">Pilih pembayaran</option>
+                    <select name="pembayaran_ke" id=""  class="form-control" value="">
+                        <option value="">Pilih Pembayaran</option>
                         <option value="Pendaftaran">Pendaftaran</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -37,8 +37,8 @@
                  </div>
                  <div class="form-group">
                      <label for="">Status</label>
-                    <select name="status" id="" class="form-control">
-                        <option value="">Pilih status</option>
+                    <select name="status" id="" class="form-control" value="">
+                        <option value="">Pilih Status</option>
                         <option value="1">Lunas</option>
                         <option value="0">Belum Lunas</option>
 

@@ -69,7 +69,7 @@ class PengajarController extends Controller
        // pretest
        $data = array_keys($data_pretest);
        $data2 = array_values($data_pretest);
-
+// dd($data2);
        // posttest
        $data3 = array_keys($data_posttest);
        $data4 = array_values($data_posttest);

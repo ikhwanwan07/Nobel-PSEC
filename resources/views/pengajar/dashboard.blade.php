@@ -22,7 +22,7 @@
                     @if (!empty($fix2))
                     {{$fix2}}
                     @else
-                        Belum ada nilai post test
+                        Belum ada nilai
                     @endif
 
                 </h1>
@@ -64,6 +64,133 @@
         </div>
     </div> --}}
 
+    <h3 class="mt-4 mb-5">Rata Rata Pretest Posttes</h3>
+    <div class="row justify-content-center">
+    <div class="col-xl-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-chart-bar mr-1"></i>
+                Pre Test
+            </div>
+            <div class="card-body"><canvas id="test" width="100%" height="40"></canvas></div>
+        </div>
+    </div>
+
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area mr-1"></i>
+                    Post Test
+                </div>
+                <div class="card-body"><canvas id="posttest" width="100%" height="40"></canvas></div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+@section('script')
+<script>
+// Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
+
+// Bar Chart Example
+var ctx = document.getElementById("test");
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: {!! json_encode($data) !!} ,
+    datasets: [{
+      label: "Rerata Nilai Pretest",
+      backgroundColor: "rgba(2,117,216,1)",
+      borderColor: "rgba(2,117,216,1)",
+      data : {!! json_encode($data2) !!},
+    //   data: [4215, 5312, 6251, 7841, 9821, 14984],
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'Nilai'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 100,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
+//Posttest
+
+// Set new default font family and font color to mimic Bootstrap's default styling
+Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+Chart.defaults.global.defaultFontColor = '#292b2c';
+
+// Bar Chart Example
+var ctx = document.getElementById("posttest");
+var myLineChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: {!! json_encode($data3) !!} ,
+    datasets: [{
+      label: "rerata Nilai posttest",
+      backgroundColor: "rgba(2,117,216,1)",
+      borderColor: "rgba(2,117,216,1)",
+      data: {!! json_encode($data4) !!} ,
+    }],
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        time: {
+          unit: 'Nilai'
+        },
+        gridLines: {
+          display: false
+        },
+        ticks: {
+          maxTicksLimit: 6
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 100,
+          maxTicksLimit: 5
+        },
+        gridLines: {
+          display: true
+        }
+      }],
+    },
+    legend: {
+      display: false
+    }
+  }
+});
+
+</script>
+
+@endsection
 
 @endsection
