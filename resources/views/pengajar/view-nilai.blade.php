@@ -84,15 +84,13 @@
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>{{$siswa->nama}}</td>
-                                {{-- judul quiz --}}
                                 <td>{{$item->soal}}</td>
-                                {{-- end judul quiz --}}
                                 <td>{{$item->nilai}}</td>
                                 <td>
                                     <form action="" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="" class="btn btn-info btn-sm">Edit</a>
+                                        <a href="{{ route('nilai.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                                       </form>
                                 </td>
@@ -131,7 +129,7 @@
                                         <form action="" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="{{ route('nilai.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
                                             <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                                           </form>
                                     </td>

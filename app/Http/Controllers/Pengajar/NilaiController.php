@@ -59,20 +59,20 @@ class NilaiController extends Controller
         $siswa = Siswa::find($id);
         $getQuiz = Quiz::all();
         $getNilai =  DB::table('nilai')
-        ->select('quizzes.soal','nilai.nilai')
+        ->select('nilai.id','quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','pretest')
         ->where('nilai.siswa_id','=',$id)
         ->get();
 
         $getNilai2 =  DB::table('nilai')
-        ->select('quizzes.soal','nilai.nilai')
+        ->select('nilai.id','quizzes.soal','nilai.nilai')
         ->join('quizzes','quizzes.id','=','nilai.quizzes_id')
         ->where('quizzes.soal','=','posttest')
         ->where('nilai.siswa_id','=',$id)
         ->get();
-        //dd($id);
-       return view('pengajar.view-nilai',compact('siswa','getQuiz','getNilai','getNilai2'));
+       // dd($getNilai);
+      return view('pengajar.view-nilai',compact('siswa','getQuiz','getNilai','getNilai2'));
     }
 
     /**
@@ -83,7 +83,9 @@ class NilaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nilai = Nilai::find($id);
+        $getQuiz = Quiz::all();
+        return view('pengajar.view-nilai-edit',compact('nilai','getQuiz'));
     }
 
     /**
@@ -95,7 +97,11 @@ class NilaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nilai = Nilai::find($id);
+        $nilaiId = $request->siswa_id;
+
+        $nilai->update($request->all());
+        return redirect()->route('nilai.show',$nilaiId);
     }
 
     /**
@@ -106,6 +112,9 @@ class NilaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nilai = Nilai::find($id);
+        $nilai->delete();
+        return redirect()->back();
     }
-}
+    }
+
