@@ -87,7 +87,7 @@
                                 <td>{{$item->soal}}</td>
                                 <td>{{$item->nilai}}</td>
                                 <td>
-                                    <form action="" method="POST">
+                                    <form action="{{route('nilai.destroy', $item->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <a href="{{ route('nilai.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
@@ -109,6 +109,7 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Nama Siswa</th>
                                     <th>Soal</th>
                                     <th>Nilai</th>
@@ -126,7 +127,7 @@
                                     <td>{{$item->soal}}</td>
                                     <td>{{$item->nilai}}</td>
                                     <td>
-                                        <form action="" method="POST">
+                                        <form action="{{route('nilai.destroy', $item->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <a href="{{ route('nilai.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
