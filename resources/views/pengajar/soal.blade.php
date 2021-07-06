@@ -88,7 +88,7 @@
                             <td>{{$item->status}}</td>
                             <td><a class="btn btn-sm btn-info" href="{{ route('soal.show', $item->id) }}">View Soal</a></td>
                             <td>
-                              <form action="" method="POST">
+                              <form action="{{ route('soal.destroy', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <a href="{{ route('soal.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
