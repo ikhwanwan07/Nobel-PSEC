@@ -37,15 +37,21 @@ class NilaiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
         $this->validate($request,[
             'nilai' => 'required|numeric|min:0|max:100',
           ]);
-        //dd($request->all());
-        $nilai = Nilai::create($request->all());
 
-        return redirect()->back();
+
+          if(Nilai::where('quizzes_id',$request->quizzes_id)->where('siswa_id',$request->siswa_id)->first() != null){
+            return redirect()->back()->with('error','data sudah ada');
+          }else{
+            $nilai = Nilai::create($request->all());
+            return redirect()->back()->with('sukses','data ditambahkan');
+          }
+        //dd($request->all())
+
     }
 
     /**
@@ -84,8 +90,9 @@ class NilaiController extends Controller
     public function edit($id)
     {
         $nilai = Nilai::find($id);
-        $getQuiz = Quiz::all();
-        return view('pengajar.view-nilai-edit',compact('nilai','getQuiz'));
+        return $nilai;
+        //$getQuiz = Quiz::all();
+        //return view('pengajar.view-nilai-edit',compact('nilai','getQuiz'));
     }
 
     /**

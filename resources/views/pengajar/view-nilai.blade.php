@@ -5,6 +5,18 @@
     <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModal">
         Tambah Nilai
       </button>
+
+      @if (session('error'))
+      <div class="alert alert-danger mt-5" role="alert">
+          {{session('error')}}
+      </div>
+      @endif
+
+      @if (session('sukses'))
+      <div class="alert alert-success mt-5" role="alert">
+          {{session('sukses')}}
+      </div>
+      @endif
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -120,17 +132,17 @@
                                 <?php
                         $no =1;
                         ?>
-                                @foreach ($getNilai2 as $item)
+                                @foreach ($getNilai2 as $item2)
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$siswa->nama}}</td>
-                                    <td>{{$item->soal}}</td>
-                                    <td>{{$item->nilai}}</td>
+                                    <td>{{$item2->soal}}</td>
+                                    <td>{{$item2->nilai}}</td>
                                     <td>
-                                        <form action="{{route('nilai.destroy', $item->id)}}" method="POST">
+                                        <form action="{{route('nilai.destroy', $item2->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="{{ route('nilai.edit', $item->id) }}" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="{{ route('nilai.edit', $item2->id) }}" class="btn btn-info btn-sm">Edit</a>
                                             <button type="submit" class="btn btn-danger btn-sm">Hapus</button >
                                           </form>
                                     </td>

@@ -85,7 +85,7 @@ class DataMateriController extends Controller
     {
         $this->validate($request,[
             'kata' => 'required',
-            'gambar' => 'required|mimes:png,jpg|file|size:1028',
+            'gambar' => 'required|mimes:png,jpg,jpeg',
             'sound' => 'required',
           ]);
         $con = $request->sub_materi_id;

@@ -12,6 +12,17 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
    Tambah
   </button>
+  @if (session('error'))
+  <div class="alert alert-danger" role="alert">
+      {{session('error')}}
+  </div>
+  @endif
+
+  @if (session('sukses'))
+  <div class="alert alert-success" role="alert">
+      {{session('sukses')}}
+  </div>
+  @endif
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -27,6 +38,15 @@
          <form action="{{ route('pembayaran.store') }}" method="POST">
             @csrf
             @method('POST')
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
              <div class="form-group">
                  <label for="">Nama siswa</label>
                  <input type="hidden" name="siswa_id" value="{{$dataSiswa->id}}">

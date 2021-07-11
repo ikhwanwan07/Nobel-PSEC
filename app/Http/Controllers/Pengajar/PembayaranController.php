@@ -42,12 +42,20 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'pembayaran' => 'required',
+            'pembayaran_ke' => 'required',
             'status' => 'required',
           ]);
-       $dataPembayaran = Pembayaran::create($request->all());
-       //return $request->all();
-       return redirect()->back();
+
+
+   // return $request->all();
+          if(Pembayaran::where('pembayaran_ke',$request->pembayaran_ke)->where('siswa_id',$request->siswa_id)->first() != null){
+            return redirect()->back()->with('error','data sudah ada');
+          }else{
+            $dataPembayaran = Pembayaran::create($request->all());
+            //return $request->all();
+            return redirect()->back()->with('sukses','data berhasil ditambah');
+          }
+
     }
 
     /**
