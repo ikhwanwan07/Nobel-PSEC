@@ -52,9 +52,37 @@ class SiswaController extends Controller
         $data4[] = $m->nilai;
       }
       }
+
+
+      $dataNilaifix1 = DB::table('materi')
+        ->select('materi.judul_materi','quizzes.soal','nilai.nilai')
+        ->join('quizzes','materi.id','=','quizzes.materi_id')
+        ->join('nilai','nilai.quizzes_id','=','quizzes.id')
+        ->where('nilai.siswa_id','=',$auth)
+        ->where('quizzes.soal','=','pretest')
+        ->get();
+        //return $dataNilaifix1;
+        foreach($dataNilaifix1 as $m1){
+            $fixNilai3 = $m1->judul_materi;
+            $fixNilai4 = $m1->nilai;
+
+        }
+
+        $dataNilaifix2 = DB::table('materi')
+        ->select('materi.judul_materi','quizzes.soal','nilai.nilai')
+        ->join('quizzes','materi.id','=','quizzes.materi_id')
+        ->join('nilai','nilai.quizzes_id','=','quizzes.id')
+        ->where('nilai.siswa_id','=',$auth)
+        ->where('quizzes.soal','=','posttest')
+        ->get();
+        //return $dataNilaifix1;
+        foreach($dataNilaifix2 as $m1){
+            $fixNilai5 = $m1->nilai;
+
+        }
       //dd($auth);
        // dd($getNilai2);
-       return view('siswa.dashboard',compact('data','data2','data3','data4'));
+       return view('siswa.dashboard',compact('data','data2','data3','data4','fixNilai3','fixNilai4','fixNilai5'));
     }
     public function jawaban(){
         $dataJawaban = Jawaban::all();

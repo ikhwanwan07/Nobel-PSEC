@@ -74,7 +74,7 @@
                             <th>No</th>
                             <th>Judul Sub Materi</th>
                             <th>Data Materi</th>
-                            <th>Links</th>
+
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -90,12 +90,15 @@
                             <td>{{$item->judul_sub}}</td>
                             <td>
                                 {{-- @if ($item->status == 1) --}}
-                                <a class="btn btn-primary btn-sm" href="{{ route('subMateri.show', $item->id) }}">View</a></td>
+                                <a class="btn btn-primary btn-sm ml-5" href="{{ route('subMateri.show', $item->id) }}">View</a>
+                                <a href="{{$item->link}}" class="btn btn-info btn-sm ml-3" target="_blank">Link</a>
+
+                            </td>
 
                                 {{-- @else
                                 <button class="btn btn-info btn-sm" disabled>View</button>
                                 @endif --}}
-                            <td><a href="{{$item->link}}" target="_blank">Link</a></td>
+
                             <td>
                                 @if ($item->status == 1)
                                 <button class="btn btn-success btn-sm">Tampil</button>

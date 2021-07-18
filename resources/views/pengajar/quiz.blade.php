@@ -29,9 +29,17 @@
                 </div>
             @endif
             <div class="form-group">
+                <label for="">Judul Materi</label>
+                <select name="materi_id" id="" class="form-control">
+                    @foreach ($materi as $item)
+                    <option value="{{$item->id}}">{{$item->judul_materi}}</option>
+                    @endforeach
+                </select>
+              </div>
+            {{-- <div class="form-group">
                 <label for="">Judul Soal</label>
                 <input type="text" name="judul_quiz" id="" class="form-control">
-              </div>
+              </div> --}}
                   <div class="form-group">
                     <label for="">Link Test</label>
                     <input type="text" name="quiz" id="" class="form-control">
@@ -62,7 +70,7 @@
                     <thead>
                         <tr>
                             <th>NO</th>
-                            <th>Judul</th>
+                            <th>Judul Materi</th>
                             <th>Link</th>
                             <th>Deskripsi</th>
                             <th>Soal</th>
@@ -77,7 +85,7 @@
                         @foreach ($quiz as $item)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>{{$item->judul_quiz}}</td>
+                            <td>{{$item->materi->judul_materi}}</td>
                             <td><a href="{{$item->quiz}}" target="_blank" class="btn btn-primary btn-sm">Link</a></td>
                             <td>{{$item->deskripsi}}</td>
                             <td>{{$item->soal}}</td>

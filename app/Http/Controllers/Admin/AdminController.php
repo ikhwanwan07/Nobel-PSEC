@@ -8,6 +8,7 @@ use App\Siswa;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -49,7 +50,27 @@ class AdminController extends Controller
         return view('admin.pembayaran');
     }
     public function dashboard() {
-        return view('admin.dashboard');
+
+        $countGuru = DB::table('users')
+        ->select(DB::raw('count(name) as dataGuru'))
+        ->where('users.role','=','guru')
+        ->get();
+
+        $countSiswa = DB::table('users')
+        ->select(DB::raw('count(name)as dataSiswa'))
+        ->where('users.role','=','siswa')
+        ->get();
+
+        foreach($countGuru as $m){
+            $getGuru = $m->dataGuru;
+        }
+
+        foreach($countSiswa as $m){
+            $getSiswa = $m->dataSiswa;
+        }
+
+        // return $getGuru;
+        return view('admin.dashboard',compact('getGuru','getSiswa'));
     }
 
     public function createSiswa(Request $request)
@@ -122,7 +143,7 @@ class AdminController extends Controller
               'email' => 'required|string|email|max:255|unique:users',
               'password' => 'required|string|min:6|',
 
-          ]);
+        ]);
 
     // //insert tabel user
     $user = new \App\User;

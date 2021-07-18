@@ -8,11 +8,15 @@ class Quiz extends Model
 {
     protected $table = 'quizzes';
 
-    protected $fillable = ['judul_quiz','quiz','soal','deskripsi'];
+    protected $fillable = ['materi_id','judul_quiz','quiz','soal','deskripsi'];
 
     public function nilai()
     {
         return $this->hasMany('App\Nilai');
+    }
+    public function materi()
+    {
+        return $this->belongsTo('App\Materi');
     }
 
 }

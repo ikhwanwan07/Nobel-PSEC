@@ -168,6 +168,12 @@ body{
   background-color: #fe31ab;
   color: white;
 }
+.fa-arrow-up {
+        color: greenyellow;
+    }
+    .fa-arrow-down {
+        color: red;
+    }
 </style>
 <div class="container-fluid">
     <h1 class="mt-4">Dashboard</h1>
@@ -240,11 +246,35 @@ body{
     <div class="row justify-content-center">
     <div class="col-xl-6">
         <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-chart-bar mr-1"></i>
-                Pre Test
+            <div class="card-header text-center">
+                {{-- <i class="fas fa-chart-bar mr-1"></i> --}}
+                {{$fixNilai3}}
             </div>
-            <div class="card-body"><canvas id="test" width="100%" height="40"></canvas></div>
+            <div class="row justify-content-center">
+                <div class="col mx-5 my-5">
+                    <h4> {{$fixNilai4}}</h4>
+                </div>
+                <div class="col my-4">
+                    @if ($fixNilai4 < $fixNilai5 )
+                    <i class="fa fa-arrow-up">
+                        <h5>{{$fixNilai5 - $fixNilai4}}</h5>
+                    </i>
+
+
+                    @else
+                    <i class="fa fa-arrow-down ">
+                        <h5>{{$fixNilai5 - $fixNilai4}}</h5>
+                    </i>
+
+                    @endif
+
+                </div>
+                <div class="col mx-2 my-5">
+                    <h4> {{$fixNilai5}}</h4>
+                </div>
+
+            </div>
+            {{-- <div class="card-body"><canvas id="test" width="100%" height="40"></canvas></div> --}}
         </div>
     </div>
 
@@ -252,7 +282,7 @@ body{
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-area mr-1"></i>
-                    Post Test
+
                 </div>
                 <div class="card-body"><canvas id="posttest" width="100%" height="40"></canvas></div>
             </div>

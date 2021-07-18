@@ -22,4 +22,9 @@ class Materi extends Model
     {
         return url('storage/'.$value);
     }
+
+    public function quiz()
+    {
+        return $this->hasMany('App\Quiz');
+    }
 }

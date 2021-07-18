@@ -44,7 +44,8 @@ class NilaiController extends Controller
           ]);
 
 
-          if(Nilai::where('quizzes_id',$request->quizzes_id)->where('siswa_id',$request->siswa_id)->first() != null){
+          if(Nilai::where('quizzes_id',$request->quizzes_id)->where('siswa_id',$request->siswa_id)->first() != null)
+          {
             return redirect()->back()->with('error','data sudah ada');
           }else{
             $nilai = Nilai::create($request->all());

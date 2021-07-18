@@ -97,9 +97,37 @@ class PengajarController extends Controller
             $fix2 = substr($fixNilai2,0,2);
         }
 
+
+        $dataNilaifix1 = DB::table('materi')
+        ->select('materi.judul_materi','quizzes.soal','nilai.nilai')
+        ->join('quizzes','materi.id','=','quizzes.materi_id')
+        ->join('nilai','nilai.quizzes_id','=','quizzes.id')
+        ->where('materi.guru_id','=',$auth)
+        ->where('quizzes.soal','=','pretest')
+        ->get();
+        //return $dataNilaifix1;
+        foreach($dataNilaifix1 as $m1){
+            $fixNilai3 = $m1->judul_materi;
+            $fixNilai4 = $m1->nilai;
+
+        }
+
+        $dataNilaifix2 = DB::table('materi')
+        ->select('materi.judul_materi','quizzes.soal','nilai.nilai')
+        ->join('quizzes','materi.id','=','quizzes.materi_id')
+        ->join('nilai','nilai.quizzes_id','=','quizzes.id')
+        ->where('materi.guru_id','=',$auth)
+        ->where('quizzes.soal','=','posttest')
+        ->get();
+        //return $dataNilaifix1;
+        foreach($dataNilaifix2 as $m1){
+            $fixNilai5 = $m1->nilai;
+
+        }
+        // return $fixNilai4;
 //cara ubah object ke integer /string
 
-     return view('pengajar.dashboard',compact('fix1','fix2','data','data2','data3','data4'));
+     return view('pengajar.dashboard',compact('fix1','fix2','data','data2','data3','data4','fixNilai3','fixNilai4','fixNilai5'));
     }
     public function materi(){
 
@@ -131,7 +159,8 @@ class PengajarController extends Controller
     }
     public function quiz(){
         $quiz= Quiz::all();
-        return view('pengajar.quiz',compact('quiz'));
+        $materi = Materi::all();
+        return view('pengajar.quiz',compact('quiz','materi'));
     }
 
     public function getProfile($id) {

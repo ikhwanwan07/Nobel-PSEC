@@ -7,7 +7,7 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body text-center">Jumlah Pengajar</div>
-                <h1 class="text-center">20</h1>
+                <h1 class="text-center">{{$getGuru}}</h1>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="/admin/data-pengajar">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -17,7 +17,7 @@
         <div class="col-xl-3 col-md-6">
             <div class="card bg-warning text-white mb-4">
                 <div class="card-body text-center">Jumlah Murid</div>
-                <h1 class="text-center">30</h1>
+                <h1 class="text-center">{{$getSiswa}}</h1>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="/admin/data-siswa">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

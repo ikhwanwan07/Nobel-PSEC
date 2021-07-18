@@ -37,12 +37,22 @@ class QuizController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'judul_quiz' => 'required|string|max:255',
+            // 'judul_quiz' => 'required|string|max:255',
               'quiz' => 'required',
               'soal' => 'required',
-              'deskripsi' => 'required|min:10|max:255',
+            //   'deskripsi' => 'required|min:10|max:255',
           ]);
-        $quizz = Quiz::create($request->all());
+        // $quizz = Quiz::create($request->all());
+
+        $quiz = new Quiz();
+        $quiz->materi_id = $request->materi_id;
+        $quiz->judul_quiz =  $request->soal;
+        $quiz->quiz= $request->quiz;
+        $quiz->soal = $request->soal;
+        $quiz->deskripsi = $request->deskripsi;
+        $quiz->save();
+
+        //return $quiz;
         return redirect()->back();
     }
 
